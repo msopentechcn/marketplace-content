@@ -5,3 +5,6 @@ Repository containing the Articles on azure 镜像市场 Documentation
 
 > [AZURE.TIP] tip!
 > a tip.
+
+> [AZURE.IMPORTANT]
+> c'est la vie
