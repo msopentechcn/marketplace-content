@@ -8,3 +8,5 @@ Repository containing the Articles on azure 镜像市场 Documentation
 
 > [AZURE.IMPORTANT]
 > c'est la vie
+> やめてよ、やめてよ、優しいくしないでよ
+
