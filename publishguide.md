@@ -40,7 +40,7 @@ Azure 镜像市场目前支持免费，及用户自带授权许可/BYOL模式（
 
 在开始注册之前，请您确认 Azure 镜像市场对供应商的要求，请参见 [Azure 镜像市场参与政策](/market/Documentation/isvpolicy/)。
 
-- 提交在线申请注册成为 Azure 镜像市场提供商 申请地址：[https://mmp-staging.chinacloudsites.cn/market/ISV/New/](/market/ISV/New/)
+- 提交在线申请注册成为 Azure 镜像市场提供商   申请地址：[https://mmp-staging.chinacloudsites.cn/market/ISV/New/](/market/ISV/New/)
 
 > [AZURE.NOTE] 注意：必须使用注册地址位于中国境内的合法运营实体进行注册。
 
@@ -56,7 +56,7 @@ Azure 镜像市场目前支持免费，及用户自带授权许可/BYOL模式（
 
 - 发布虚拟机镜像的详细过程，请参考： [Azure 镜像市场虚拟机镜像制作指南](/market/Documentation/imageguide/)
 - 您可以联系 Azure 镜像市场[技术支持](/market/Contact)
-- 制作完成并上传到公用的Azure存储账户后，您可以填写发布申请表单，申请产品上架
+- 制作完成并上传到公用的Azure存储账户后，您可以填写发布申请表单，申请产品上架  
 申请地址： [https://mmp-staging.chinacloudsites.cn/market/Vhd/Index/](/market/vhd/index/)
 
 
@@ -70,9 +70,9 @@ Azure 镜像市场目前支持免费，及用户自带授权许可/BYOL模式（
 为了激活您的产品发布权限，您需要一个有效的激活凭据。
 
 - 提供微软全球合作伙伴ID作为激活凭据
-- 如果您是Azure付费客户并已经拥有有效ID，请跳过此步骤, 否则，请通过在线购买方式或联系相关的销售代表来购买由世纪互联运营的Azure
+- 如果您是Azure付费客户并已经拥有有效ID，请跳过此步骤, 否则，请通过在线购买方式或联系相关的销售代表来购买由世纪互联运营的Azure  
 在线直付申请地址： [https://www.azure.cn/pricing/pia-waiting-list/?form-type=waitinglist](https://www.azure.cn/pricing/pia-waiting-list/?form-type=waitinglist)
-- 获得激活凭据后，请通过以下页面，激活您的发布权限：
+- 获得激活凭据后，请通过以下页面，激活您的发布权限：  
 发布权限激活页面：[https://mmp-staging.chinacloudsites.cn/market/ISV/Activate/](/market/ISV/Activate)
 - 激活成功后您就可以进行生产环境预发布了
 
