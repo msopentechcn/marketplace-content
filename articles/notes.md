@@ -2,10 +2,13 @@
 >
 > A sentence crossed an empty line
 
+
 > [AZURE.IMPORTANT] IMPORTANT TITLE
 > A sentence in next line
 
+
 > [AZURE.TIP] TIP TITLE: in the same line
+
 
 > [AZURE.WARNING] WARNING TITLE
 > next line
