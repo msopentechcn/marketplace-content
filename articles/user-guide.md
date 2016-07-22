@@ -28,6 +28,8 @@ In this tutorial, you'll use [Python Tools for Visual Studio] (PTVS) to create a
 
 See the [Python Developer Center] for more articles that cover development of Azure App Service Web Apps with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL, and SQL Database services. While this article focuses on App Service, the steps are similar when developing [Azure Cloud Services].
 
+[AZURE.INCLUDE [tabs](../README.md)]
+
 ## Prerequisites
 
  - Visual Studio 2013 or 2015
