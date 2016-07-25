@@ -58,7 +58,7 @@
 
 > [AZURE.IMPORTANT] 本主题介绍如何使用 [Azure 经典管理门户](https://manage.windowsazure.cn/) 配置 Web 应用。
 
-以上四种提示标签中支持代码块、图片、列表和链接，但是请保持提示简介明了。如果你觉得需要创建一个带有许多复杂格式的提示，或许你应该将这些内容放入正文中。另外，太多的标签会打乱读者注意力，影响阅读。
+以上四种提示标签中支持代码块、图片、列表和链接，但是请保持提示简洁明了。如果你觉得需要创建一个带有许多复杂格式的提示，或许你应该将这些内容放入正文中。另外，太多的标签会打乱读者注意力，影响阅读。
 
 #### markdown 代码样例
 
@@ -84,7 +84,9 @@
 
 #### markdown 代码样例
 
-	[AZURE.INCLUDE [include-short-name](../includes/include-file-name.md)]
+	[A​ZURE.INCLUDE [include-short-name](../includes/include-file-name.md)]
+
+注：请勿直接复制此代码。
 
 ## 命名与地址规范
 
