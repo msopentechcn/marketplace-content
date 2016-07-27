@@ -16,14 +16,15 @@
 在代码块之前空一行，并使代码块相对于前面的代码有 2 个 tab 或 8 个空格的缩进。
 
 		1. first
-
+		
 				this.is("a code");
-
+		
 		2. second
 			- second_first
-
+		
 					a.code(in_nested_lists);
-
+				
+			- second_second
 会被解析为：
 
 1. first
@@ -33,7 +34,9 @@
 2. second
 	- second_first
 
-		a.code(in_nested_lists);
+			a.code(in_nested_lists);
+		
+	- second_second
 
 ## 折行
 
