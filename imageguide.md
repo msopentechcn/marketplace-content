@@ -28,9 +28,9 @@
 1. 安装Application软件。登录虚拟机，安装应用软件，并设置开启启动服务。
 2. 尝试清除虚拟机系统并使其适用于重新配置。  
 键入如下命令，对于过程中 “Do you want to proceed?”，选择'y'。
-    ```
-    sudo waagent -deprovision
-    ```
+
+        sudo waagent -deprovision
+
 3. 虚拟机关机。  
 键入Exit退出虚拟机，在Azure管理平台上，选择对应的虚拟机然后关机。
 4. 捕获虚拟机。  
@@ -60,9 +60,9 @@
 1. 安装Application软件。登录虚拟机，安装应用软件，并设置开启启动服务。
 2. 尝试清除虚拟机系统并使其适用于重新配置，并关机。  
 打开终端窗口，进入目录 `%windir%\system32\sysprep`，比如`C:\Windows\System32\sysprep`。然后运行: 
-    ```
-    sysprep.exe
-    ```
+
+        sysprep.exe
+
 此时会显示“系统准备工具”对话框。在“系统清理操作”中，选择“进入系统全新体验(OOBE)”，并确保选中“通用”。在“关机选项”中选择“关机”。单击“确定”关机。
 3. 捕获虚拟机。  
 对相应的虚拟机，点击“捕获”，输入新映像的名字，并选择选项“我已经在虚拟机上运行了Sysprep”，生成新映像。注意虚拟机映像的存储位置对应的容器属性应该设置为“公共Blob”，否则在Azure 镜像市场上发布的时候会找不到对应的映像。
@@ -93,13 +93,13 @@
 关于Hyper-V在各版本Windows上的安装和配置，请参考： [安装Hyper-V并创建虚拟机](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-endorsed-distros/)
 3. 本机安装了PowerShell命令行工具  
     获取Azure的配置文件（过程中需要输入azure的账号密码），并保存到磁盘。  
-    ```
-    Get-AzurePublishSettingsFile –Environment azurechinacloud  
-    ```  
+
+        Get-AzurePublishSettingsFile –Environment azurechinacloud  
+
     导入账户认证信息，路径用引号（为上一步骤中的配置文件路径）。
-    ```
-    Import-AzurePublishSettingsFile <PathToFile>
-    ```  
+
+        Import-AzurePublishSettingsFile <PathToFile>
+
 第一步完成后，即可开始制作映像，制作VHD主要包括两种方式，第一种是通过本地Hyper-V虚拟机建立VHD，第二种是直接在Azure制作VHD。以下以本地建立VHD为例进行介绍：
 
 ### 第二步：从本机制作Linux应用程序VHD映像
@@ -114,128 +114,128 @@
 Linux虚拟机安装完毕后，继续安装和配置应用软件。
 2. 网络和网卡配置
     1. 卸载NetworkManager（这个软件包一般Linux没有装）
-        ```
-        # sudo rpm -e --nodeps NetworkManager
-        ```
+
+            # sudo rpm -e --nodeps NetworkManager
+
     2. 编辑文件`/etc/sysconfig/network`如下:
-        ```
-        NETWORKING=yes
-        OSTNAME=localhost.localdomain
-        ```
-     3. 编辑网卡配置文件`/etc/sysconfig/network-scripts/ifcfg-eth0`:
-        ```
-        DEVICE=eth0
-        ONBOOT=yes
-        BOOTPROTO=dhcp
-        TYPE=Ethernet
-        USERCTL=no
-        PEERDNS=yes
-        IPV6INIT=no
-        ```
-     4. 修改udev防止以太网接口生成固定规则，在Azure平台上克隆虚拟机的时候，这些规则可能导致问题。
-        ```
-        # sudo ln -s /dev/null /etc/udev/rules.d/75-persistent-net-generator.rules
-        # sudo rm -f /etc/udev/rules.d/70-persistent-net.rules
-        ```
-     5. 确保系统在启动的时候网络服务正常:
-        ```
-        # sudo chkconfig network on
-        ```
+
+            NETWORKING=yes
+            OSTNAME=localhost.localdomain
+
+    3. 编辑网卡配置文件`/etc/sysconfig/network-scripts/ifcfg-eth0`:
+
+	        DEVICE=eth0
+	        ONBOOT=yes
+	        BOOTPROTO=dhcp
+	        TYPE=Ethernet
+	        USERCTL=no
+	        PEERDNS=yes
+	        IPV6INIT=no
+
+    4. 修改udev防止以太网接口生成固定规则，在Azure平台上克隆虚拟机的时候，这些规则可能导致问题。
+
+	        # sudo ln -s /dev/null /etc/udev/rules.d/75-persistent-net-generator.rules
+	        # sudo rm -f /etc/udev/rules.d/70-persistent-net.rules
+
+    5. 确保系统在启动的时候网络服务正常:
+
+			# sudo chkconfig network on
+
 3. 对于CentOS 6.3或早期版本，安装驱动Linux Integration Services (LIS)，在CentOS 6.4+ 以上版本跳过此步骤  
     下载如下软件包，并通过rpm进行安装：[LIS download page](https://www.microsoft.com/en-us/download/details.aspx?id=46842)
 4. 安装软件包python-pyasn1，后面的WALinuxAgent依赖于此
-    ```
-    # sudo yum install python-pyasn1
-    ```
+
+		# sudo yum install python-pyasn1
+
 5. 修改yum相关配置，为安装WaLinuxAgent做准备
-     1. 编辑yum配置文件`/etc/yum.repos.d/CentOS-Base.repo`
-        ```
-        [openlogic]
-        name=CentOS-$releasever - openlogic packages for $basearch
-        baseurl=http://olcentgbl.trafficmanager.net/openlogic/$releasever/openlogic/$basearch/
-        enabled=1
-        gpgcheck=0
-        [base]
-        name=CentOS-$releasever - Base
-        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/os/$basearch/
-        gpgcheck=1
-        gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-        #released updates
-        [updates]
-        name=CentOS-$releasever - Updates
-        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/updates/$basearch/
-        gpgcheck=1
-        gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-        #additional packages that may be useful
-        [extras]
-        name=CentOS-$releasever - Extras
-        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/extras/$basearch/
-        gpgcheck=1
-        gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-        #additional packages that extend functionality of existing packages
-        [centosplus]
-        name=CentOS-$releasever - Plus
-        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/centosplus/$basearch/
-        gpgcheck=1
-        enabled=0
-        gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-        #contrib - packages by Centos Users
-        [contrib]
-        name=CentOS-$releasever - Contrib
-        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/contrib/$basearch/
-        gpgcheck=1
-        enabled=0
-        gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-        ```
-     2. 配置`/etc/yum.conf`
-        ```
-        http_caching=packages
-        ```
+    1. 编辑yum配置文件`/etc/yum.repos.d/CentOS-Base.repo`
+
+	        [openlogic]
+	        name=CentOS-$releasever - openlogic packages for $basearch
+	        baseurl=http://olcentgbl.trafficmanager.net/openlogic/$releasever/openlogic/$basearch/
+	        enabled=1
+	        gpgcheck=0
+	        [base]
+	        name=CentOS-$releasever - Base
+	        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/os/$basearch/
+	        gpgcheck=1
+	        gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+	        #released updates
+	        [updates]
+	        name=CentOS-$releasever - Updates
+	        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/updates/$basearch/
+	        gpgcheck=1
+	        gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+	        #additional packages that may be useful
+	        [extras]
+	        name=CentOS-$releasever - Extras
+	        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/extras/$basearch/
+	        gpgcheck=1
+	        gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+	        #additional packages that extend functionality of existing packages
+	        [centosplus]
+	        name=CentOS-$releasever - Plus
+	        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/centosplus/$basearch/
+	        gpgcheck=1
+	        enabled=0
+	        gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+	        #contrib - packages by Centos Users
+	        [contrib]
+	        name=CentOS-$releasever - Contrib
+	        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/contrib/$basearch/
+	        gpgcheck=1
+	        enabled=0
+	        gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+
+    2. 配置`/etc/yum.conf`
+
+       		http_caching=packages
+
         另外，CentOS 6.3需要增加如下行：  
-        ```
-        exclude=kernel*
-        ```
-     3. 编辑`/etc/yum/pluginconf.d/fastestmirror.conf`, 使得yum模块`"fastestmirror"`无效  
+
+        	exclude=kernel*
+
+    3. 编辑`/etc/yum/pluginconf.d/fastestmirror.conf`, 使得yum模块`fastestmirror`无效  
         在[main]一节, 设置
-        ```
-        set enabled=0
-        ```
-     4. 清空现有的yum源数据  
-        ```
-        # yum clean all
-        ```
-     5. 对于CentOS 6.3, 更新内核:  
-        ```
-        # sudo yum --disableexcludes=all install kernel
-        ```
+
+        	set enabled=0
+
+    4. 清空现有的yum源数据  
+
+       		# yum clean all
+
+    5. 对于CentOS 6.3, 更新内核:  
+
+        	# sudo yum --disableexcludes=all install kernel
+
     6. 在grub配置中为Azure修改内核启动参数，打开`/boot/grub/menu.lst`，增加：
-        ```
-        console=ttyS0 earlyprintk=ttyS0 rootdelay=300 numa=off
-        ```
+
+       		console=ttyS0 earlyprintk=ttyS0 rootdelay=300 numa=off
+
         建议去掉以下参数：
-        ```
-        rhgb quiet crashkernel=auto
-        ```
+
+        	rhgb quiet crashkernel=auto
+
 6. 通过yum安装WaLinuxAgent
     1. 安装Azure Linux Agent
-        ```
-        # sudo yum install WALinuxAgent
-        ```
+
+        	# sudo yum install WALinuxAgent
+
     2. 打开配置文件`/etc/waagent.conf`如下修改:
-        ```
-        ResourceDisk.Format=y
-        ResourceDisk.Filesystem=ext4
-        ResourceDisk.MountPoint=/mnt/resource
-        ResourceDisk.EnableSwap=y
-        ResourceDisk.SwapSizeMB=2048`　　## NOTE：此项根据你的需要设置
-        ```
+
+	        ResourceDisk.Format=y
+	        ResourceDisk.Filesystem=ext4
+	        ResourceDisk.MountPoint=/mnt/resource
+	        ResourceDisk.EnableSwap=y
+	        ResourceDisk.SwapSizeMB=2048`　　## NOTE：此项根据你的需要设置
+
     3. 运行如下命令，你将不能再启动此虚拟机，直到它部署在Azure上运行。
-        ```
-        # sudo waagent -force -deprovision  
-        # export HISTSIZE=0  
-        # logout
-        ```
-7. 在Hyper-v中关闭Linux，Linux VHD文件已经制作好并可以上传到Azure。
+
+	        # sudo waagent -force -deprovision  
+	        # export HISTSIZE=0  
+	        # logout
+
+7. 在 Hyper-V 中关闭 Linux，Linux VHD 文件已经制作好并可以上传到Azure。
 
 ### 第三步：将VHD上传至Azure
 
@@ -247,13 +247,13 @@ Linux虚拟机安装完毕后，继续安装和配置应用软件。
 假设我们的目标是将VHD文件放置到Azure上的存储空间`mystorage`中的容器`mycontainer`中，位置为`myurl`。  
 进入Azure管理平台，建立存储空间 `mystorage` 并在其下面建立容器 `mycontainer` ，然后拷贝这个容器的url位置，注意容器的属性一定要设置为“公共blob”属性，只有“公共blob”属性中的VHD映像才能够被发布到 Azure 镜像市场。  
 2. 将本地的VHD文件上传至Azure的指定位置。打开PowerShell，在PowerShell中输入如下指令。
-    ```
-    Add-AzureVhd [[-NumberOfUploaderThreads] [<Int32>]] -Destination <BlobStorageURL>/<YourImagesFolder>/<VHDName> -LocalFilePath <PathToVHDFile>
-    ```
+
+    	Add-AzureVhd [[-NumberOfUploaderThreads] [<Int32>]] -Destination <BlobStorageURL>/<YourImagesFolder>/<VHDName> -LocalFilePath <PathToVHDFile>
+
     例如：
-    ```
-     Add-AzureVhd -NumberOfUploaderThreads 5 -Destination https://mystorage.blob.core.chinacloudapi.cn/mycontainer/myvhd.vhd -LocalFilePath D:\Mydir\Hyper-V\myvhds\myvhd.vhd
-    ```
+
+    	Add-AzureVhd -NumberOfUploaderThreads 5 -Destination https://mystorage.blob.core.chinacloudapi.cn/mycontainer/myvhd.vhd -LocalFilePath D:\Mydir\Hyper-V\myvhds\myvhd.vhd
+
 3. 点击“虚拟机”-“映像”-“创建”，然后选择刚才上传的vhd创建映像。至此，您已经成功完成了映像的制作和上传。下一步，便可以发布映像到 Azure 镜像市场。
 
 ## 从本机构建Windows应用程序虚拟机映像
@@ -280,13 +280,12 @@ Linux虚拟机安装完毕后，继续安装和配置应用软件。
 关于Hyper-V在各版本Windows上的安装和配置，请参考： [安装Hyper-V并创建虚拟机](https://technet.microsoft.com/library/hh846766.aspx)
 3. 本机安装了PowerShell命令行工具  
 获取Azure的配置文件（过程中需要输入azure的账号密码），并保存到磁盘。  
-    ```
-    Get-AzurePublishSettingsFile –Environment azurechinacloud  
-    ```
+
+		Get-AzurePublishSettingsFile –Environment azurechinacloud  
+
     导入账户认证信息，路径用引号（为上一步骤中的配置文件路径）。  
-    ```
-    Import-AzurePublishSettingsFile <PathToFile>
-    ```
+
+    	Import-AzurePublishSettingsFile <PathToFile>
 
 第一步完成后，即可开始制作映像，制作VHD主要包括两种方式，第一种是通过本地Hyper-V虚拟机建立VHD，第二种是直接在Azure制作VHD。以下以本地建立VHD为例进行介绍：
 
@@ -297,9 +296,9 @@ Linux虚拟机安装完毕后，继续安装和配置应用软件。
 1. 安装Application软件。登录虚拟机，安装应用软件，并设置开启启动服务。
 2. 尝试清除虚拟机系统并使其适用于重新配置，并关机。  
 打开终端窗口，进入目录， `%windir%\system32\sysprep`，比如`C:\Windows\System32\sysprep`. 然后运行:   
-    ```
-    sysprep.exe
-    ```
+
+		sysprep.exe
+
     此时会显示“系统准备工具”对话框。在“系统清理操作”中，选择“进入系统全新体验(OOBE)”，并确保选中“通用”。在“关机选项”中选择“关机”。单击“确定”关机。
 3. 在 Hyper-V 中关闭Linux，Linux VHD文件已经制作好并可以上传到Azure。
 
@@ -313,13 +312,13 @@ Linux虚拟机安装完毕后，继续安装和配置应用软件。
 假设我们的目标是将VHD文件放置到Azure上的存储空间`mystorage`中的容器`mycontainer`中，位置为`myurl`。  
 进入Azure管理平台，建立存储空间`mystorage`并在其下面建立容器`mycontainer`，然后拷贝这个容器的url位置，注意容器的属性一定要设置为“公共blob”属性，只有“公共blob”属性中的VHD映像才能够被发布到 Azure 镜像市场。
 2. 将本地的VHD文件上传至Azure的指定位置。打开PowerShell，在PowerShell中输入如下指令。
-    ```
-    Add-AzureVhd [[-NumberOfUploaderThreads] [<Int32>]] -Destination <BlobStorageURL>/<YourImagesFolder>/<VHDName> -LocalFilePath <PathToVHDFile>
-    ```
+
+    	Add-AzureVhd [[-NumberOfUploaderThreads] [<Int32>]] -Destination <BlobStorageURL>/<YourImagesFolder>/<VHDName> -LocalFilePath <PathToVHDFile>
+
     例如：
-    ```
-    Add-AzureVhd -NumberOfUploaderThreads 5 -Destination https://mystorage.blob.core.chinacloudapi.cn/mycontainer/myvhd.vhd -LocalFilePath D:\Mydir\Hyper-V\myvhds\myvhd.vhd
-    ```
+
+    	Add-AzureVhd -NumberOfUploaderThreads 5 -Destination https://mystorage.blob.core.chinacloudapi.cn/mycontainer/myvhd.vhd -LocalFilePath D:\Mydir\Hyper-V\myvhds\myvhd.vhd
+
 3. 生成虚拟机映像  
 点击“虚拟机”-“映像”-“创建”，然后选择刚才上传的vhd创建映像。至此，您已经成功完成了映像的制作和上传。下一步，便可以发布映像到 Azure 镜像市场。
 
