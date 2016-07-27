@@ -9,6 +9,21 @@
 - [markdown——入门指南](http://www.jianshu.com/p/1e402922ee32/)
 - [markdown简明语法教程](https://github.com/Melo618/Simple-markdown-Guide)
 
+## 更新时间
+
+如果希望显示最新更新时间，请在文档开头写入一个 `<tags>` 的 XML 标签，其中添加 `ms.date` 和 `wacn.date` 的属性。我们会将其显示在标题下方。其中，
+
+- `ms.date` 会显示为 `最后更新时间（英文版）`
+- `wacn.date` 会显示为 `最后更新时间（中文版）`
+
+如：
+	<tags 
+	ms.date="07/07/2016"
+	wacn.date="07/08/2016"/>
+会显示为：
+
+![ms.date](./media/docsguide/ms.date.png)
+
 ## 标题与章节
 
 文章大标题请使用 `h1` 标签，比如：
@@ -41,22 +56,30 @@
 - AZURE.NOTE  
 用 AZURE.NOTE 来显示中性或者正面的信息，用以强调正文中的重点，或者支持文中的关键之处。  
 
-> [AZURE.NOTE] 如果不想使用公钥和私钥交换来保护 **ssh** 会话的安全，你还可以在此处选择用户名/密码身份验证并输入该信息。
+	> [AZURE.NOTE] 如果不想使用公钥和私钥交换来保护 **ssh** 会话的安全，你还可以在此处选择用户名/密码身份验证并输入该信息。
+
+![azure.note](./media/docsguide/azure.note.png)
 
 - AZURE.WARNING  
 用 AZURE.WARNING 来在一些可能产生问题的情况下警告用户注意。比如，一些可能损坏系统的选项。
 
-> [AZURE.WARNING] Azure 一直在不断扩大规模，因此很容易出现过载现象。
+	> [AZURE.WARNING] Azure 一直在不断扩大规模，因此很容易出现过载现象。
+
+![azure.warning](./media/docsguide/azure.warning.png)
 
 - AZURE.TIP  
 用 AZURE.TIP 来帮助用户使用文中的技术来满足需求。 Tip 也可以指出一些正文以外的替代方案。但是，即使不看 tip 也不应当影响对正文的理解。
 
-> [AZURE.TIP] Azure 的 Web 接口名为 (经典管理门户)[http://manage.windowsazure.cn/] ，允许管理员访问和管理大多数但不是所有 Azure 功能。
+	> [AZURE.TIP] Azure 的 Web 接口名为 (经典管理门户)[http://manage.windowsazure.cn/] ，允许管理员访问和管理大多数但不是所有 Azure 功能。
+
+![azure.tip](./media/docsguide/azure.tip.png)
 
 - AZURE.IMPORTANT  
 用 AZURE.IMPORTANT 来展示完成一项工作的关键步骤。
 
-> [AZURE.IMPORTANT] 本主题介绍如何使用 [Azure 经典管理门户](https://manage.windowsazure.cn/) 配置 Web 应用。
+	> [AZURE.IMPORTANT] 本主题介绍如何使用 [Azure 经典管理门户](https://manage.windowsazure.cn/) 配置 Web 应用。
+
+![azure.important](./media/docsguide/azure.important.png)
 
 以上四种提示标签中支持代码块、图片、列表和链接，但是请保持提示简洁明了。如果你觉得需要创建一个带有许多复杂格式的提示，或许你应该将这些内容放入正文中。另外，太多的标签会打乱读者注意力，影响阅读。
 
@@ -84,11 +107,10 @@
 
 #### markdown 代码样例
 
-	[A​ZURE.INCLUDE [include-short-name](../includes/include-file-name.md)]
+	[AZURE.INCLUDE [include-short-name](../includes/include-file-name.md)]
 
-注：请勿直接复制此代码。
 
-## 命名与地址规范
+## 文档文件命名与地址规范
 
 文档编写好之后，请提交 pull request 到指定的 github 库中，我们会自动拉取其内容并转换为 HTML格式显示在我们的页面上。网页的相对路径与文件在 git 上的相对路径一致。比如：
 
@@ -103,3 +125,14 @@
 	![logo](./media/logo.jpg)
 
 我们会自动将其拷贝到服务器上并处理其地址。
+
+如果引用了镜像商店中的路径，请使用 `~/` 作为相对路径的头部代替 `http://.../market/`. 比如，想引用
+
+	http://.../market/Vhd/Show?vhdId=164945&version=23555
+
+请写链接为
+
+	[my_vhd](~/Vhd/Show?vhdId=164945&version=23555)
+
+我们会将其处理为可以访问的地址。
+

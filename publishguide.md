@@ -1,6 +1,6 @@
 # Azure 镜像市场发布商指南
 
-本指南提供独立软件供应商产品上架到 Azure 镜像市场（以下简称 Azure 镜像市场）需要遵循的全流程。
+本指南提供独立软件供应商产品上架到 Azure 镜像市场（以下简称 **Azure 镜像市场**）需要遵循的全流程。
 
 ## 文档适用范围
 - 本指南适用于希望通过由世纪互联运营的Microsoft Azure，在 Azure 镜像市场提供应用虚拟机镜像产品，并面向中国境内用户提供服务的独立软件供应商
@@ -25,7 +25,7 @@ Azure 镜像市场目前支持免费，及用户自带授权许可/BYOL模式（
 下表描述了 Azure 镜像市场当前支持的商务模式。 一个产品/服务可以包括使用不同定价模型的不同 SKU。
 
 
-| 定价模型 | 说明 | 适用对象 |
+| **定价模型** | **说明** | **适用对象** |
 | --- | --- | --- |
 | 免费 | 免费 SKU。 不会因客户使用产品/服务而向其收取 Azure 镜像市场费用。免费 SKU 的价格不能增加到非零金额。 | 虚拟机映像，VM 扩展，ARM 模板 |
 | 免费试用 | SKU 有限时间免费推广版。在试用期期间，将不会因客户使用产品而向其收取 Azure 镜像市场费用。 在试用期到期后，将自动基于标准费率向使用产品的客户进行收费。镜像超市当前无法阻止用户创建针对免费试用产品的多个订阅。希望限制客户可以为免费试用产品创建的订阅数量的发布方负责在其使用条款中包括适当限制。 | 虚拟机映像 |
@@ -38,9 +38,9 @@ Azure 镜像市场目前支持免费，及用户自带授权许可/BYOL模式（
 
 ### 第一步： 成为 Azure 镜像市场提供商
 
-在开始注册之前，请您确认 Azure 镜像市场对供应商的要求，请参见 [Azure 镜像市场参与政策](/market/Documentation/isvpolicy/)。
+在开始注册之前，请您确认 Azure 镜像市场对供应商的要求，请参见 [Azure 镜像市场参与政策](~/Documentation/isvpolicy/)。
 
-- 提交在线申请注册成为 Azure 镜像市场提供商   申请地址：[https://mmp-staging.chinacloudsites.cn/market/ISV/New/](/market/ISV/New/)
+- 提交在线申请注册成为 Azure 镜像市场提供商   申请地址：[~/ISV/New/](~/ISV/New/)
 
 > [AZURE.NOTE] 注意：必须使用注册地址位于中国境内的合法运营实体进行注册。
 
@@ -54,10 +54,10 @@ Azure 镜像市场目前支持免费，及用户自带授权许可/BYOL模式（
 
 ### 第三步： 构建用于发布的虚拟机镜像
 
-- 发布虚拟机镜像的详细过程，请参考： [Azure 镜像市场虚拟机镜像制作指南](/market/Documentation/imageguide/)
-- 您可以联系 Azure 镜像市场[技术支持](/market/Contact)
+- 发布虚拟机镜像的详细过程，请参考： [Azure 镜像市场虚拟机镜像制作指南](~/Documentation/imageguide/)
+- 您可以联系 Azure 镜像市场[技术支持](~/Contact)
 - 制作完成并上传到公用的Azure存储账户后，您可以填写发布申请表单，申请产品上架  
-申请地址： [https://mmp-staging.chinacloudsites.cn/market/Vhd/Index/](/market/vhd/index/)
+申请地址： [~/Vhd/Index/](~/vhd/index/)
 
 
 ### 第四步： 预发布
@@ -73,7 +73,7 @@ Azure 镜像市场目前支持免费，及用户自带授权许可/BYOL模式（
 - 如果您是Azure付费客户并已经拥有有效ID，请跳过此步骤, 否则，请通过在线购买方式或联系相关的销售代表来购买由世纪互联运营的Azure  
 在线直付申请地址： [https://www.azure.cn/pricing/pia-waiting-list/?form-type=waitinglist](https://www.azure.cn/pricing/pia-waiting-list/?form-type=waitinglist)
 - 获得激活凭据后，请通过以下页面，激活您的发布权限：  
-发布权限激活页面：[https://mmp-staging.chinacloudsites.cn/market/ISV/Activate/](/market/ISV/Activate)
+发布权限激活页面：[~/ISV/Activate/](~/ISV/Activate)
 - 激活成功后您就可以进行生产环境预发布了
 
 #### 4.2 预发布
