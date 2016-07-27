@@ -72,7 +72,7 @@
 - AZURE.TIP  
 用 AZURE.TIP 来帮助用户使用文中的技术来满足需求。 Tip 也可以指出一些正文以外的替代方案。但是，即使不看 tip 也不应当影响对正文的理解。
 
-	`> [AZURE.TIP] Azure 的 Web 接口名为 (经典管理门户)[http://manage.windowsazure.cn/] ，允许管理员访问和管理大多数但不是所有 Azure 功能。`
+	`> [AZURE.TIP] Azure 的 Web 接口名为 [经典管理门户](http://manage.windowsazure.cn/) ，允许管理员访问和管理大多数但不是所有 Azure 功能。`
 
 ![azure.tip](./media/docsguide/azure.tip.png)
 
