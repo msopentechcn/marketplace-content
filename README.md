@@ -57,7 +57,7 @@
 	
 会显示为：
 
-![ms.date](./media/docsguide/ms.date.png)
+![ms.date](./media/ms.date.png)
 
 ## 标题与章节
 
@@ -75,7 +75,7 @@
 
 会生成：
 
-![h2_list_screenshot](./media/docsguide/h2_list_screenshot.jpg)
+![h2_list_screenshot](./media/h2_list_screenshot.jpg)
 
 ## Azure 自定义标签
 
@@ -93,28 +93,28 @@
 
 	`> [AZURE.NOTE] 如果不想使用公钥和私钥交换来保护 **ssh** 会话的安全，你还可以在此处选择用户名/密码身份验证并输入该信息。`
 
-![azure.note](./media/docsguide/azure.note.png)
+![azure.note](./media/azure.note.png)
 
 - AZURE.WARNING  
 用 AZURE.WARNING 来在一些可能产生问题的情况下警告用户注意。比如，一些可能损坏系统的选项。
 
 	`> [AZURE.WARNING] Azure 一直在不断扩大规模，因此很容易出现过载现象。`
 
-![azure.warning](./media/docsguide/azure.warning.png)
+![azure.warning](./media/azure.warning.png)
 
 - AZURE.TIP  
 用 AZURE.TIP 来帮助用户使用文中的技术来满足需求。 Tip 也可以指出一些正文以外的替代方案。但是，即使不看 tip 也不应当影响对正文的理解。
 
 	`> [AZURE.TIP] Azure 的 Web 接口名为 [经典管理门户](http://manage.windowsazure.cn/) ，允许管理员访问和管理大多数但不是所有 Azure 功能。`
 
-![azure.tip](./media/docsguide/azure.tip.png)
+![azure.tip](./media/azure.tip.png)
 
 - AZURE.IMPORTANT  
 用 AZURE.IMPORTANT 来展示完成一项工作的关键步骤。
 
 	`> [AZURE.IMPORTANT] 本主题介绍如何使用 [Azure 经典管理门户](https://manage.windowsazure.cn/) 配置 Web 应用。`
 
-![azure.important](./media/docsguide/azure.important.png)
+![azure.important](./media/azure.important.png)
 
 以上四种提示标签中支持代码块、图片、列表和链接，但是请保持提示简洁明了。如果你觉得需要创建一个带有许多复杂格式的提示，或许你应该将这些内容放入正文中。另外，太多的标签会打乱读者注意力，影响阅读。
 
