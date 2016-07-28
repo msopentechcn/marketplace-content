@@ -9,6 +9,39 @@
 - [markdown——入门指南](http://www.jianshu.com/p/1e402922ee32/)
 - [markdown简明语法教程](https://github.com/Melo618/Simple-markdown-Guide)
 
+## 缩进与代码块
+
+本系统不支持 github 式的 `three-tick` 代码块。请使用缩进代码块。
+
+在代码块之前空一行，并使代码块相对于前面的代码有 2 个 tab 或 8 个空格的缩进。
+
+		1. first
+		
+				this.is("a code");
+		
+		2. second
+			- second_first
+		
+					a.code(in_nested_lists);
+				
+			- second_second
+会被解析为：
+
+1. first
+
+		this.is("a code");
+
+2. second
+	- second_first
+
+			a.code(in_nested_lists);
+		
+	- second_second
+
+## 折行
+
+如果想在文中折行而不想破坏 `<li>` 结构，或者不想产生新的 `<p>`，请在行末打 2 个空格。
+
 ## 更新时间
 
 如果希望显示最新更新时间，请在文档开头写入一个 `<tags>` 的 XML 标签，其中添加 `ms.date` 和 `wacn.date` 的属性。我们会将其显示在标题下方。其中，
