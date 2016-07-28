@@ -147,6 +147,8 @@
 
 ## 文档文件命名与地址规范
 
+**请使用无空格的小写英文字母、中文字符或连字符(`-`)做文档文件、文件夹和图片的路径名。**
+
 文档编写好之后，请提交 pull request 到指定的 github 库中，我们会自动拉取其内容并转换为 HTML格式显示在我们的页面上。网页的相对路径与文件在 git 上的相对路径一致。比如：
 
 	https://github.com/msopentechcn/marketplace-content/blob/master/publishguide.md
