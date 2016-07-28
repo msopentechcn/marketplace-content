@@ -1,7 +1,4 @@
-# marketplace-content
-Repository containing the Articles on azure 镜像市场 Documentation.
-
-# 镜像商店文档编写指南
+# 镜像市场文档编写指南
 
 ## markdown
 
@@ -173,7 +170,3 @@ Repository containing the Articles on azure 镜像市场 Documentation.
 	[my_vhd](~/Vhd/Show?vhdId=164945&version=23555)
 
 我们会将其处理为可以访问的地址。
-
-
-
-![logo](./media/logo.jpg)

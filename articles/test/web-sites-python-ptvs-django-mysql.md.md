@@ -18,8 +18,6 @@
 
 # Django and MySQL on Azure with Python Tools 2.2 for Visual Studio 
 
-[AZURE.INCLUDE [tabs](../../includes/app-service-web-get-started-nav-tabs.md)]
-
 In this tutorial, you'll use [Python Tools for Visual Studio] (PTVS) to create a simple polls web app using one of the PTVS sample templates. You'll learn how to use a MySQL service hosted on Azure, how to configure the web app to use MySQL, and how to publish the web app to [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 > [AZURE.NOTE] The information contained in this tutorial is also available in the following video:
@@ -27,8 +25,6 @@ In this tutorial, you'll use [Python Tools for Visual Studio] (PTVS) to create a
 > [PTVS 2.1: Django app with MySQL][video]
 
 See the [Python Developer Center] for more articles that cover development of Azure App Service Web Apps with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL, and SQL Database services. While this article focuses on App Service, the steps are similar when developing [Azure Cloud Services].
-
-[AZURE.INCLUDE [tabs](../README.md)]
 
 ## Prerequisites
 
@@ -38,8 +34,6 @@ See the [Python Developer Center] for more articles that cover development of Az
  - [Python Tools 2.2 for Visual Studio Samples VSIX]
  - [Azure SDK Tools for VS 2013] or [Azure SDK Tools for VS 2015]
  - Django 1.6 or earlier
-
-[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 <!-- This note should not render as part of the the previous include. -->
 
