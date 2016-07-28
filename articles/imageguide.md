@@ -8,7 +8,7 @@
 
 下图描述了总体的虚拟机的VHD映像生成以及发布到 Azure Azure 镜像市场的全过程：
 
-![azure_cloud_and_marketplace](http://i.imgur.com/9FXRC5h.png)
+![azure_cloud_and_marketplace](./media/imageguide/cloud_marketplace.png)
 
 具体步骤如下：
 
@@ -73,7 +73,7 @@
 
 下图描述了总体的虚拟机映像的VHD生成，上传以及发布到 Azure 镜像市场的全过程：
 
-![azure_client_cloud_marketplace](http://i.imgur.com/c5MHnzu.png)
+![azure_client_cloud_marketplace](./media/imageguide/client_cloud_marketplace.png)
 
 具体步骤如下：
 
@@ -260,7 +260,7 @@ Linux虚拟机安装完毕后，继续安装和配置应用软件。
 
 下图描述了总体的虚拟机映像的VHD生成，上传以及发布到 Azure 镜像市场的全过程：
 
-![azure_client_cloud_marketplace](http://i.imgur.com/c5MHnzu.png)
+![azure_client_cloud_marketplace](./media/imageguide/client_cloud_marketplace.png)
 
 具体步骤如下：
 
