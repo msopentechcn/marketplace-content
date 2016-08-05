@@ -3,7 +3,7 @@
 ## note: 
 > [AZURE.NOTE] NOTE TITLE
 >
-> A sentence crossed an empty line
+> A sentence crossed an empty line.
 
 ## important:
 > [AZURE.IMPORTANT] IMPORTANT TITLE
