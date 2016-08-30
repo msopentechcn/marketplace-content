@@ -1,4 +1,4 @@
-# 使用 Azure 镜像市场上发布的虚拟机镜像！
+# 使用 Azure 镜像市场上发布的虚拟机镜像
 
 ![header_ul](./media/userguide/header_ul.png)
 
