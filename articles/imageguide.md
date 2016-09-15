@@ -34,7 +34,14 @@
 3. 虚拟机关机。  
 键入Exit退出虚拟机，在Azure管理平台上，选择对应的虚拟机然后关机。
 4. 捕获虚拟机。  
-对相应的虚拟机，点击“捕获”，输入新映像的名字，并选择选项“I have run the de-provision command on the Virtual Machine”，生成新映像。注意虚拟机映像的存储位置对应的容器属性应该设置为“公共Blob”，否则在Azure 镜像市场上发布的时候会找不到对应的映像。
+
+
+对相应的虚拟机，点击“捕获”，输入新映像的名字，并选择选项“I have run the de-provision command on the Virtual Machine”，生成新映像。
+
+> [AZURE.NOTE] 注意:虚拟机映像的存储位置对应的容器属性应该设置为“
+> 
+> 
+> ”，否则在Azure 镜像市场上发布的时候会找不到对应的映像。
 
 此时创建新的虚拟机的时候，便可以“从库中”选择你最新创建的虚拟机映像。
 
@@ -63,9 +70,12 @@
 
         sysprep.exe
 
-此时会显示“系统准备工具”对话框。在“系统清理操作”中，选择“进入系统全新体验(OOBE)”，并确保选中“通用”。在“关机选项”中选择“关机”。单击“确定”关机。
+	此时会显示“系统准备工具”对话框。在“系统清理操作”中，选择“进入系统全新体验(OOBE)”，并确保选中“通用”。在“关机选项”中选择“关机”。单击“确定”关机。
+
 3. 捕获虚拟机。  
-对相应的虚拟机，点击“捕获”，输入新映像的名字，并选择选项“我已经在虚拟机上运行了Sysprep”，生成新映像。注意虚拟机映像的存储位置对应的容器属性应该设置为“公共Blob”，否则在Azure 镜像市场上发布的时候会找不到对应的映像。
+对相应的虚拟机，点击“捕获”，输入新映像的名字，并选择选项“我已经在虚拟机上运行了Sysprep”，生成新映像。
+
+	> [AZURE.NOTE] 注意:虚拟机映像的存储位置对应的容器属性应该设置为“公共Blob”，否则在Azure 镜像市场上发布的时候会找不到对应的映像。
 
 此时创建新的虚拟机的时候，便可以“从库中”选择你最新创建的虚拟机映像。
 
@@ -245,7 +255,10 @@ Linux虚拟机安装完毕后，继续安装和配置应用软件。
 
 1. 在Azure管理平台上建立存储位置。  
 假设我们的目标是将VHD文件放置到Azure上的存储空间`mystorage`中的容器`mycontainer`中，位置为`myurl`。  
-进入Azure管理平台，建立存储空间 `mystorage` 并在其下面建立容器 `mycontainer` ，然后拷贝这个容器的url位置，注意容器的属性一定要设置为“公共blob”属性，只有“公共blob”属性中的VHD映像才能够被发布到 Azure 镜像市场。  
+进入Azure管理平台，建立存储空间 `mystorage` 并在其下面建立容器 `mycontainer` ，然后拷贝这个容器的url位置。
+
+	> [AZURE.NOTE] 注意:容器的属性一定要设置为“公共blob”属性，只有“公共blob”属性中的VHD映像才能够被发布到 Azure 镜像市场。
+  
 2. 将本地的VHD文件上传至Azure的指定位置。打开PowerShell，在PowerShell中输入如下指令。
 
     	Add-AzureVhd [[-NumberOfUploaderThreads] [<Int32>]] -Destination <BlobStorageURL>/<YourImagesFolder>/<VHDName> -LocalFilePath <PathToVHDFile>
@@ -310,7 +323,10 @@ Linux虚拟机安装完毕后，继续安装和配置应用软件。
 
 1. 在Azure管理平台上建立存储位置。  
 假设我们的目标是将VHD文件放置到Azure上的存储空间`mystorage`中的容器`mycontainer`中，位置为`myurl`。  
-进入Azure管理平台，建立存储空间`mystorage`并在其下面建立容器`mycontainer`，然后拷贝这个容器的url位置，注意容器的属性一定要设置为“公共blob”属性，只有“公共blob”属性中的VHD映像才能够被发布到 Azure 镜像市场。
+进入Azure管理平台，建立存储空间`mystorage`并在其下面建立容器`mycontainer`，然后拷贝这个容器的url位置。
+	> [AZURE.NOTE] 注意:容器的属性一定要设置为“公共blob”属性，只有“公共blob”属性中的VHD映像才能够被发布到 Azure 镜像市场。
+
+
 2. 将本地的VHD文件上传至Azure的指定位置。打开PowerShell，在PowerShell中输入如下指令。
 
     	Add-AzureVhd [[-NumberOfUploaderThreads] [<Int32>]] -Destination <BlobStorageURL>/<YourImagesFolder>/<VHDName> -LocalFilePath <PathToVHDFile>
