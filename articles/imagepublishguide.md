@@ -49,15 +49,15 @@ Azure 镜像市场主页点击 “发布”——>“虚拟机镜像”，如下
 类目标签列表
 | **类目** | **类目标签** |
 | --- | --- |
-| 应用服务器 | appserver |
-| 应用栈 | stack |
-| 大数据 | bigdata |
-| 数据库和缓存 | database/cache |
-| 网站基础架构 | network infrastructure |
-| 操作系统 | operating system |
-| 安全 | security |
-| 问题追踪 | bug tracking |
-| 监控 | monitoring |
-| 日志分析 | log analysis |
-| 源代码管理 | source management |
-| 测试 | testing |
+| 应用服务器 | appserver /
+/ 应用栈 / stack /
+/ 大数据 / bigdata /
+/ 数据库和缓存 / database/cache /
+/ 网站基础架构 / network infrastructure /
+/ 操作系统 / operating system /
+/ 安全 / security /
+/ 问题追踪 / bug tracking /
+/ 监控 / monitoring /
+/ 日志分析 / log analysis /
+/ 源代码管理 / source management /
+/ 测试 / testing /
