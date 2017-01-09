@@ -56,9 +56,9 @@ Azure 镜像市场主页点击 “发布”——>“虚拟机镜像”，如下
 | 数据库和缓存 | database/cache |
 | 网站基础架构 | network infrastructure |
 | 操作系统 | operating system |
-/ 安全 / security /
-/ 问题追踪 / bug tracking /
-/ 监控 / monitoring /
-/ 日志分析 / log analysis /
-/ 源代码管理 / source management /
-/ 测试 / testing /
+| 安全 | security |
+| 问题追踪 | bug tracking |
+| 监控 | monitoring |
+| 日志分析 | log analysis |
+| 源代码管理 | source management |
+| 测试 | testing |
