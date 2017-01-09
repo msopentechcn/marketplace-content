@@ -27,7 +27,6 @@ Azure 镜像市场主页点击 “发布”——>“虚拟机镜像”，如下
 其中，带“*”的为必填项目，“？”为帮助信息。
 
 ### 虚拟机内容规范
-
 规范的格式一般不是必须，但是遵循规范有利于用户对您的镜像的查找、排序操作等。
 
 | **项目名称** | **规范描述** | **例子** |
@@ -77,7 +76,7 @@ Azure 镜像市场主页点击 “发布”——>“虚拟机镜像”，如下
 | 高性能计算 | high performance computing |
 | 媒体 | media |
 | 项目管理 | project management |
-| 存储与备份 | storage,backup |
+| 存储与备份 | storage/backup |
 | **解决方案** | **** |
 | 综合行业 | solution collateral, integrated industry |
 | 制造业 | solution collateral,manufacturing |
