@@ -1,4 +1,5 @@
 
+
 # 在 Azure 镜像市场上发布虚拟机镜像
 
 Azure上发布虚拟机镜像过程比较简单，您只要遵循以下步骤，就能轻松地将您的镜像发布到 Azure 镜像市场。
@@ -46,19 +47,50 @@ Azure 镜像市场主页点击 “发布”——>“虚拟机镜像”，如下
 | 软件包 | 主要的软件安装包，一般需要包含软件版本信息，逗号分隔。 | tomat-5.5.3,php-5.3.1 |
 | 标签 | 包括镜像所属的软件类目、主要特征或主要软件等，逗号分隔。注意一定要包括镜像分类的类目标签（tag），请参考以下中文类目，再填写进对应的英文类目标签。如果不填写软件类目标签，则可能在镜像分类中搜索不到 | crm,project management,lamp |
 
+
 类目标签列表
 
 | **类目** | **类目标签** |
 | --- | --- |
+| **基础软件组件** |  |
 | 应用服务器 | appserver |
 | 应用栈 | stack 
 | 大数据 | bigdata |
-| 数据库和缓存 | database/cache |
+| 数据库和缓存 | database,cache |
 | 网站基础架构 | network infrastructure |
 | 操作系统 | operating system |
 | 安全 | security |
+| **开发运维工具** | **** |
 | 问题追踪 | bug tracking |
 | 监控 | monitoring |
 | 日志分析 | log analysis |
 | 源代码管理 | source management |
 | 测试 | testing |
+| **商业应用** | **** |
+| 商业智能 | business intelligence |
+| 建站与内容管理 | cms,content management,site construction |
+| 协同办公 | collaboration |
+| CRM | crm |
+| ERP | erp |
+| 电子商务 | ecommerce |
+| 教育和研究 | education |
+| 金融服务 | financial |
+| 高性能计算 | high performance computing |
+| 媒体 | media |
+| 项目管理 | project management |
+| 存储与备份 | storage,backup |
+| **解决方案** | **** |
+| 综合行业 | solution collateral, integrated industry |
+| 制造业 | solution collateral,manufacturing |
+| 公共事业 | solution collateral,public service |
+| 零售快销 | solution collateral,retailing |
+| 旅游 | solution collateral,tourism |
+| 地产 | solution collateral,estate |
+| 专业服务 | solution collateral,professional services |
+| 互联网 | solution collateral,internet |
+| 物流交通 | solution collateral,logistics |
+| 金融证券 | solution collateral,financial/financial industry/securities |
+| 媒体 | solution collateral,media |
+| 石油 | solution collateral,oil |
+| 汽车服务 | solution collateral,vehicle |
+| IT服务 | solution collateral,IT service/information technologies |
