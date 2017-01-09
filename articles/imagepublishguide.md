@@ -33,8 +33,7 @@ Azure 镜像市场主页点击 “发布”——>“虚拟机镜像”，如下
 | **项目名称** | **规范描述** | **例子** |
 | --- | --- | --- |
 | 缩略图 | 一般要求为正方形，像素要求215* 215以上，低于此尺寸可能导致图片扭曲或显示模糊。 |  |
-| 镜像名称 | 推荐的名称格式为：软件名称-版本号-其余信息(操作系统)。 | ImageName-7.2-SC-UTF8 (Openlogic CentOS 7.2) |
-| SKU | 软件名称-类目-版本 | Lamp-infrastructure-5.6.0 |
+| 镜像名称 | 推荐的名称格式为：软件名称-版本号-其余信息(操作系统)。 | ImageName-7.2-SC-UTF8 (Openlogic CentOS 7.2) || SKU | 软件名称-类目-版本 | Lamp-infrastructure-5.6.0 |
 | 用户协议网址 | 协议url地址 |  |
 | 来源网站 | 一般填写该镜像中的主要软件所在的主站地址 |  |
 | 镜像简要描述 | 简洁描述该镜像的基本功能、特点和适用范围等，占用镜像列表中的2-3行，不少于100汉字，最多不超过250汉字。 |  |
@@ -56,7 +55,7 @@ Azure 镜像市场主页点击 “发布”——>“虚拟机镜像”，如下
 | 应用服务器 | appserver |
 | 应用栈 | stack 
 | 大数据 | bigdata |
-| 数据库和缓存 | database,cache |
+| 数据库和缓存 | database/cache |
 | 网站基础架构 | network infrastructure |
 | 操作系统 | operating system |
 | 安全 | security |
@@ -68,7 +67,7 @@ Azure 镜像市场主页点击 “发布”——>“虚拟机镜像”，如下
 | 测试 | testing |
 | **商业应用** | **** |
 | 商业智能 | business intelligence |
-| 建站与内容管理 | cms,content management,site construction |
+| 建站与内容管理 | cms/content management/site construction |
 | 协同办公 | collaboration |
 | CRM | crm |
 | ERP | erp |
@@ -92,5 +91,5 @@ Azure 镜像市场主页点击 “发布”——>“虚拟机镜像”，如下
 | 金融证券 | solution collateral,financial/financial industry/securities |
 | 媒体 | solution collateral,media |
 | 石油 | solution collateral,oil |
-| 汽车服务 | solution collateral,vehicle |
+| 汽车服务 | solution collateral,car/vehicle |
 | IT服务 | solution collateral,IT service/information technologies |
