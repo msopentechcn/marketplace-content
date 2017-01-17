@@ -6,7 +6,7 @@
 
 ## 从Azure上构建Linux应用程序映像
 
-下图描述了总体的虚拟机的VHD映像生成以及发布到 Azure Azure 镜像市场的全过程：
+下图描述了总体的虚拟机的VHD映像生成以及发布到 Azure Azure 镜像市场的过程：
 
 ![azure_cloud_and_marketplace](./media/imageguide/cloud_marketplace.png)
 
