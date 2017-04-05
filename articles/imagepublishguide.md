@@ -8,7 +8,7 @@ Azure上发布虚拟机镜像过程比较简单，您只要遵循以下步骤，
 
 1. 您需要一个有 Azure 账户。（如果还没有，[请到这里购买](https://www.azure.cn/pricing/pia/)）
 2. 如果您需要申请试用账号，[请访问这里](https://www.azure.cn/pricing/1rmb-trial?v=b)。
-3. 准备发布前资料。请参考 [发布商入驻指南](https://mmp-staging.chinacloudsites.cn/market/Documentation/article/publishguide/) ；准备好虚拟机镜像文件，参考 [虚拟机镜像制作](https://mmp-staging.chinacloudsites.cn/market/Documentation/article/imageguide/)。
+3. 准备发布前资料。请参考 [发布商入驻指南](https://market.azure.cn/Documentation/article/publishguide/) ；准备好虚拟机镜像文件，参考 [虚拟机镜像制作](https://market.azure.cn/market/Documentation/article/imageguide/)。
 
 ## 发布虚拟机镜像
 
