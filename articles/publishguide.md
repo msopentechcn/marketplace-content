@@ -54,7 +54,7 @@ Azure 市场目前支持免费，及自带许可证（BYOL，Bring Your Own Lice
 - 制作 ARM 模板的详细过程，请参考： [创作 ARM 模板](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-authoring-templates)
 - 对于定制服务，您需要准备好解决方案相关的文档资源等
 - 镜像制作完成并测试后，需要上传到公用的 Azure 存储账户，ARM 模板文件可以存放到 Azure 存储账号或非 Azure 存储账号
-- 您可以联系 Azure 市场[技术支持](~/Contact)
+- 您可以联系 Azure 市场[技术支持](~/contact/feedback)
 
 
 ### 第三步： 预发布
