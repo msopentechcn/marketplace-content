@@ -12,10 +12,10 @@
 构建 VHD 文件主要包括以下四种方法，一般可以选取前面两种，相对简单。
 
 ### 从 Azure 上构建 Linux 应用程序镜像
-从 Azure 上构建 Linux 应用程序镜像，请参考文档 [使用 CLI 创建Linux Azure 虚拟机镜像](https://docs.azure.cn/zh-cn/virtual-machines/linux/tutorial-custom-images#next-steps)。
+从 Azure 上构建 Linux 应用程序镜像，请参考文档 [使用 CLI 创建Linux Azure 虚拟机镜像](https://docs.azure.cn/zh-cn/virtual-machines/linux/tutorial-custom-images#next-steps)。请注意，在 Azure 平台上创建虚机进行配置的时候，磁盘类型请选择“HDD”，“设置”->“存储”选项中的“使用托管的磁盘”，请选择“否”。
 
 ### 从 Azure 上构建 Windows 应用程序镜像
-从 Azure 上构建 Linux 应用程序镜像，请参考文档 [使用 PowerShell 创建Windows Azure 虚拟机镜像](https://docs.azure.cn/zh-cn/virtual-machines/windows/tutorial-custom-images)。
+从 Azure 上构建 Linux 应用程序镜像，请参考文档 [使用 PowerShell 创建Windows Azure 虚拟机镜像](https://docs.azure.cn/zh-cn/virtual-machines/windows/tutorial-custom-images)。请注意，在 Azure 平台上创建虚机进行配置的时候，磁盘类型请选择“HDD”，“设置”->“存储”选项中的“使用托管的磁盘”，请选择“否”。
 
 
 ### 从 Azure 外部（本地）构建 Linux 应用程序镜像
