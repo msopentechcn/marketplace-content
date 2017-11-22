@@ -36,9 +36,9 @@
 
 “构建和测试虚拟机镜像”完成后，VHD 文件保存到了存储账号中，但由于发布需要用到经典存储账号，所以还需要将 VHD 文件拷贝到经典存储账号并用 PowerShell 脚本测试后，方能发布到 Azure 市场。
 
-- 如果您的 VHD 文件没有位于（经典）存储账号，请登录 [Azure Web管理](https://portal.azure.cn/) 平台，手动创建用于测试的（经典）存储账号。请下载PowerShell脚本 [将文件从存储账号拷贝到经典存储账号](https://github.com/msopentechcn/marketplace-content/blob/master/script/vhdcopy.ps1)，修改参数后运行，将 VHD 文件从现有存储账号拷贝到（经典）存储账号。请注意脚本中的 VHD 源地址所在的容器访问策略应该为“Blob”或“容器”。也可以参考 AzCopy 等传输工具，如 [使用 Windows 上的 AzCopy 传输数据](https://docs.azure.cn/zh-cn/storage/common/storage-use-azcopy)。
+- 如果您的 VHD 文件没有位于（经典）存储账号，请登录 [Azure Web管理](https://portal.azure.cn/) 平台，手动创建用于测试的（经典）存储账号。请下载PowerShell脚本 [将文件从存储账号拷贝到经典存储账号](https://raw.githubusercontent.com/msopentechcn/marketplace-content/master/script/vhdcopy.ps1 "download")，修改参数后运行，将 VHD 文件从现有存储账号拷贝到（经典）存储账号。请注意脚本中的 VHD 源地址所在的容器访问策略应该为“Blob”或“容器”。也可以参考 AzCopy 等传输工具，如 [使用 Windows 上的 AzCopy 传输数据](https://docs.azure.cn/zh-cn/storage/common/storage-use-azcopy)。
 
-- 下载PowerShell脚本 [采用经典方式创建虚拟机](https://github.com/msopentechcn/marketplace-content/blob/master/script/createvm-classic.ps1)，查看虚拟机创建是否成功。测试完成后，创建的虚拟机所在的资源组需要手动从 Azure 管理平台删除。请注意，脚本执行前请先登录 Azure 平台，参见脚本中的相关提示，包括 Add-AzureAccount、Select-AzureSubscription 等指令。脚本输入参数中，“vhdUri”为VHD所在url地址，“storageAccountName”和“subid”为创建虚拟机所在的（经典）存储账号（可以用vhdUri的账号）和订阅ID。
+- 下载PowerShell脚本 [采用经典方式创建虚拟机](https://raw.githubusercontent.com/msopentechcn/marketplace-content/master/script/createvm-classic.ps1 "download")，查看虚拟机创建是否成功。测试完成后，创建的虚拟机所在的资源组需要手动从 Azure 管理平台删除。请注意，脚本执行前请先登录 Azure 平台，参见脚本中的相关提示，包括 Add-AzureAccount、Select-AzureSubscription 等指令。脚本输入参数中，“vhdUri”为VHD所在url地址，“storageAccountName”和“subid”为创建虚拟机所在的（经典）存储账号（可以用vhdUri的账号）和订阅ID。
 
 	> [AZURE.NOTE] 注意: VHD 发布到 Azure 市场前，VHD 镜像文件所在的容器访问策略一定要设置为 “Blob 或 容器”，这样 VHD 镜像才能够被发布到 Azure 市场。
 	> 测试过程中，如果
