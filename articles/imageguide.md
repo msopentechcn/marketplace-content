@@ -19,7 +19,7 @@
 - 参考文档中，“解除分配 VM 并将其标记为通用化”完成后，VHD 镜像文件已经制作好了，可以在portal Web 管理页面的资源组中查看。后续测试中，“从映像创建 VM”可以在 portal Web 管理页面操作，这样比较简单。
 
 ### 从 Azure 上构建 Windows 应用程序镜像
-从 Azure 上构建 Linux 应用程序镜像，请参考文档 [使用 PowerShell 创建Windows Azure 虚拟机镜像](https://docs.azure.cn/zh-cn/virtual-machines/windows/tutorial-custom-images)。请注意以下几点：
+从 Azure 上构建 Windows 应用程序镜像，请参考文档 [使用 PowerShell 创建Windows Azure 虚拟机镜像](https://docs.azure.cn/zh-cn/virtual-machines/windows/tutorial-custom-images)。请注意以下几点：
 
 - 在 Azure 平台上创建虚机进行配置的时候，磁盘类型请选择“HDD”；“设置”->“存储”选项中的“使用托管的磁盘”，请选择“否”。否则 VHD 文件可能会创建失败。
 - 参考文档中，“解除分配 VM 并将其标记为通用化”需要首先在ARM 模式下登录Azure（Login-AzureRmAccount -EnvironmentName AzureChinaCloud）再执行，完成后可以在portal Web 管理页面的资源组中查看 VHD 文件。后续测试中，“从映像创建 VM”可以在 portal Web 管理页面操作，这样比较简单。
@@ -40,7 +40,7 @@
 
 ## 镜像发布到 Azure 市场前的测试
 
-“构建和测试虚拟机镜像”完成后，还需要在（经典）模式（相对于“Azure 资源管理器”模式）下对 VHD 镜像文件进行测试，这个测试需要用到（经典）存储账号，在 PowerShell 下测试。
+“构建和测试虚拟机镜像”完成后，还不能直接发布到 Azure 市场，还需要在（经典）模式（相对于“Azure 资源管理器”模式）下对 VHD 镜像文件进行测试。这个测试需要用到（经典）存储账号，在 PowerShell 下进行。
 
 - 确保 VHD 文件位于（经典）存储账号中。如果您的 VHD 文件没有位于（经典）存储账号中，请登录 [Azure Web管理](https://portal.azure.cn/) 平台，手动创建用于测试的（经典）存储账号。请下载 PowerShell 脚本 [将文件从存储账号拷贝到经典存储账号](https://raw.githubusercontent.com/msopentechcn/marketplace-content/master/script/vhdcopy.ps1 "download")，修改参数后运行，将 VHD 文件从现有存储账号拷贝到（经典）存储账号。请注意脚本中的 VHD 源地址所在的存储容器的访问策略应该为“Blob”或“容器”。除了 PowerShell ，也可以使用 AzCopy 等工具进行拷贝，如 [使用 Windows 上的 AzCopy 传输数据](https://docs.azure.cn/zh-cn/storage/common/storage-use-azcopy)。
 
