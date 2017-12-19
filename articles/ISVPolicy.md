@@ -1,6 +1,6 @@
 
 
-# Azure中国市场参与政策
+# Azure中国市场参与政策   [[English Version](https://market-publish.azure.cn/documentation/article/AzureImageMarketplaceParticipationPoliciesEN/)]
 
 本市场参与政策适用于Azure中国市场的所有服务商和产品。本政策是《Azure中国市场服务商协议》的条款和条件的补充。服务商在参与Azure中国市场时，必须始终遵守本文件中规定和/或提及的政策。如果任何服务商在任何时候未遵守任何条款或条件，世纪互联有权将该服务商的产品从Azure中国市场以及Azure门户（以下统称“Azure市场”或“市场”）下架。我方可以不时更新本文件。
 

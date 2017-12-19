@@ -1,6 +1,6 @@
 
 
-# Azure中国市场服务商协议
+# Azure中国市场服务商协议 [[English Version](https://market-publish.azure.cn/documentation/article/AzureImageMarketplacePublisherAgreementEN/)]
 
 感谢您有意通过世纪互联运营的Microsoft Azure上的市场（以下简称“**Azure中国市场**”）发布相关产品。本Azure中国市场服务商协议（以下简称本“**协议**”）阐述了您与世纪互联（以下简称“**我方**”）的关系，适用于您在Azure中国市场以及Azure门户（以下统称“**Azure市场**”或“**市场**”）发布的任何产品（定义见下文）。
 
