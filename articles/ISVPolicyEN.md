@@ -17,11 +17,11 @@ China Marketplace and Azure Portal (collectively, "Azure Marketplace" or
 
 1.  Software and services offered in the Azure Marketplace must meet at least one of the following criteria:
 
-    -   **Run on Microsoft Azure** **operated by 21Vianet:** The primary function of the software or service must run on Microsoft Azure.
+ -   **Run on Microsoft Azure** **operated by 21Vianet:** The primary function of the software or service must run on Microsoft Azure.
 
-    -   **Deployable to Microsoft Azure** **operated by 21Vianet:** Service providers must describe in their offering listing information how the software or service is deployed on Microsoft Azure.
+ -   **Deployable to Microsoft Azure** **operated by 21Vianet:** Service providers must describe in their offering listing information how the software or service is deployed on Microsoft Azure.
 
-    -   **Integrate with or extend a Microsoft Azure service operated by 21Vianet:** Service providers must indicate in their offering listing information which Azure service the software or service integrates with or extends and how the software or service integrates or extends the Azure service.
+ -   **Integrate with or extend a Microsoft Azure service operated by 21Vianet:** Service providers must indicate in their offering listing information which Azure service the software or service integrates with or extends and how the software or service integrates or extends the Azure service.
 
 2.  Service providers must be located in China and supported by the Azure Marketplace.
 
@@ -120,8 +120,9 @@ SKUs that utilize different pricing models.
 
 | **Pricing Model** | **Description** | **Applicable to** |
 | --- | --- | --- |
-|**Free**|Free SKU. Customers are not charged Azure Marketplace fees for use of the offering. Prices for free SKUs may not be increased to non-zero amounts.| Virtual Machine Images<br/>Customized Services<br/>ARM Templates|
-|**BYOL**|Bring-Your-Own-License (BYOL) SKU.  Customers obtain outside of the Azure Marketplace the right to access or use the offering and are not charged Azure Marketplace fees for use of the offering in the Azure Marketplace.|Virtual Machine Images<br/>ARM Templates|
+| **Free** |Free SKU. Customers are not charged Azure Marketplace fees for use of the offering. Prices for free SKUs may not be increased to non-zero amounts.| Virtual Machine Images<br/>Customized Services<br/>ARM Templates|
+| **BYOL** |Bring-Your-Own-License (BYOL) SKU.  Customers obtain outside of the Azure Marketplace the right to access or use the offering and are not charged Azure Marketplace fees for use of the offering in the Azure Marketplace.|Virtual Machine Images<br/>ARM Templates|
+
 
 Currently, the Marketplace is not able to support the ability of service
 providers to alter their user fees for offerings that have already been
