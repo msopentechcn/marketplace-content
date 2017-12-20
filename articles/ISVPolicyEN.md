@@ -119,7 +119,7 @@ supported by the Azure Marketplace. An offering may include different
 SKUs that utilize different pricing models.
 
 | **Pricing Model** | **Description** | **Applicable to** |
-|---|:--------:|---:|
+|:----|:-------:|:----|
 | **Free** |Free SKU. Customers are not charged Azure Marketplace fees for use of the offering. Prices for free SKUs may not be increased to non-zero amounts.|  - Virtual Machine Images<br/> - Customized Services<br/> - ARM Templates|
 | **BYOL** |Bring-Your-Own-License (BYOL) SKU.  Customers obtain outside of the Azure Marketplace the right to access or use the offering and are not charged Azure Marketplace fees for use of the offering in the Azure Marketplace.| - Virtual Machine Images<br/> - ARM Templates|
 
