@@ -120,8 +120,8 @@ SKUs that utilize different pricing models.
 
 |  **Pricing Model**  | **Description** |  **Applicable to**  |
 |:---|:---|:---|
-| **Free** |Free SKU. Customers are not charged Azure Marketplace fees for use of the offering. Prices for free SKUs may not be increased to non-zero amounts.|  - Virtual Machine Images<br/> - Customized Services<br/> - ARM Templates|
-| **BYOL** |Bring-Your-Own-License (BYOL) SKU.  Customers obtain outside of the Azure Marketplace the right to access or use the offering and are not charged Azure Marketplace fees for use of the offering in the Azure Marketplace.| - Virtual Machine Images<br/> - ARM Templates|
+| **Free** |Free SKU. Customers are not charged Azure Marketplace fees for use of the offering. Prices for free SKUs may not be increased to non-zero amounts.|  - Virtual Machine Images <br/> - Customized Services <br/> - ARM Templates|
+| **BYOL** |Bring-Your-Own-License (BYOL) SKU.  Customers obtain outside of the Azure Marketplace the right to access or use the offering and are not charged Azure Marketplace fees for use of the offering in the Azure Marketplace.| - Virtual Machine Images <br/> - ARM Templates|
 
 
 Currently, the Marketplace is not able to support the ability of service
@@ -137,20 +137,20 @@ fees.
 
 1.  21Vianet reserves the right to suspend or remove an offering from the Azure Marketplace for any reason. Reasons 21Vianet may remove an offering include, but are not limited to:
 
-    -   The offering has not been provisioned by any customers for six or more months;
+ -   The offering has not been provisioned by any customers for six or more months;
 
-    -   The offering consistently receives negative customer feedback;
+ -   The offering consistently receives negative customer feedback;
 
-    -   The offering consistently receives a large number of support tickets; or
+ -   The offering consistently receives a large number of support tickets; or
 
-    -   The service provider has failed to comply with terms and conditions in the Azure China Marketplace Service Provider Agreement, the Marketplace Publication Technical Guidelines, or this document.
+ -   The service provider has failed to comply with terms and conditions in the Azure China Marketplace Service Provider Agreement, the Marketplace Publication Technical Guidelines, or this document.
 
-    -   The offering includes any untrue, unlawful, inaccurate or incomplete content, or includes any obscenity, pornography, gambling, violence, homicide, terror, immorality, fraud, libel, threat or harassment content;
+ -   The offering includes any untrue, unlawful, inaccurate or incomplete content, or includes any obscenity, pornography, gambling, violence, homicide, terror, immorality, fraud, libel, threat or harassment content;
 
-    -   The offering contains any malicious computer code or virus, or may otherwise interrupt or intend to interrupt the normal operation of the Marketplace platform, other service  providers' images or any function thereof.
+ -   The offering contains any malicious computer code or virus, or may otherwise interrupt or intend to interrupt the normal operation of the Marketplace platform, other service  providers' images or any function thereof.
 
-    -   The offering may infringe any legal rights of others, including without limitation, the intellectual property rights.
+ -   The offering may infringe any legal rights of others, including without limitation, the intellectual property rights.
 
-    -   The offering may violate any applicable laws and regulations.
+ -   The offering may violate any applicable laws and regulations.
 
 2.  Service providers can remove an offering after 30 days' notice. Following removal of a Service offering, service providers must continue to provide the service to each existing customer for 90 days or until expiration of the term of that customer's subscription to the Service offering, whichever is longer. Following removal of any other type of offering, removal of the offering will apply to prospective customers only, and existing customers will be able to continue to use the offering to the same extent as prior to the removal. Removal notices must be sent to the following email alias: <azuremarket@oe.21vianet.com>, Following 30 days after receipt of a removal notice, 21Vianet will remove the offering so that it is no longer available to new subscribers.
