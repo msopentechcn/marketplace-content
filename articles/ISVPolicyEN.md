@@ -93,15 +93,15 @@ China Marketplace and Azure Portal (collectively, "Azure Marketplace" or
 
 ### SECTION 4 Offering Classification Definitions.
 
-####Virtual Machine Image
+#### Virtual Machine Image
 Pre-configured virtual machine (VM) image with a fully installed operating system and one or more applications. Virtual Machine Image offerings may include a single VM image or multiple VM images tied together by an ARM Template.
 
 A virtual machine image (“Image”) provides the information necessary to create and deploy virtual machines in the Azure Virtual Machines service. An Image comprises an operating system virtual hard drive and zero or more data disk virtual hard drives. Customers can deploy any number of virtual machines from a single Image.
 
-####Customized Services (Solutions)
+#### Customized Services (Solutions)
 Solutions that are provided to solve certain IT problems, which are common in specific industry, based on Azure software or soft hardware.  These are for reference and consultation by business analysts, development, operation and maintenance personnel or IT professionals.  Customer may contact service provider to request for Customized Services based on its own needs and scenarios.
 	
-####ARM Template
+#### ARM Template
 Azure Resource Manager (ARM) template that can reference multiple, distinct offerings, including offerings published by other service providers, to enable Azure customers to deploy one or more offerings in a single, coordinated fashion.
 
 An “Azure Resource Manager (ARM) Template” is a data structure that references one or more Offerings and includes metadata about the Offering(s), including associated Listing Information. ARM Templates are used by the Marketplace Service to display and enable Customers to deploy certain categories of Offerings. Service providers may publish ARM Templates in the Marketplace that reference multiple, distinct Offerings, including Offerings published by other service providers. 
@@ -121,7 +121,7 @@ SKUs that utilize different pricing models.
 | **Pricing Model** | **Description** | **Applicable to** |
 | --- | --- | --- |
 |**Free**|Free SKU. Customers are not charged Azure Marketplace fees for use of the offering. Prices for free SKUs may not be increased to non-zero amounts.| Virtual Machine Images<br/>Customized Services<br/>ARM Templates|
-|**BYOL **|Bring-Your-Own-License (BYOL) SKU.  Customers obtain outside of the Azure Marketplace the right to access or use the offering and are not charged Azure Marketplace fees for use of the offering in the Azure Marketplace.|Virtual Machine Images<br/>ARM Templates|
+|**BYOL**|Bring-Your-Own-License (BYOL) SKU.  Customers obtain outside of the Azure Marketplace the right to access or use the offering and are not charged Azure Marketplace fees for use of the offering in the Azure Marketplace.|Virtual Machine Images<br/>ARM Templates|
 
 Currently, the Marketplace is not able to support the ability of service
 providers to alter their user fees for offerings that have already been
