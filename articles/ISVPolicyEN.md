@@ -69,7 +69,7 @@ China Marketplace and Azure Portal (collectively, "Azure Marketplace" or
  
  -   Pricing model
  
- -   The Marketplace currently only accepts free and BYOL SKUs. The offering must be compatible with [pricingmodels](https://azure.microsoft.com/en-us/marketplace/faq/)supported by the Azure Marketplace, as described in **Section 5** of this document.
+ -   The Marketplace currently only accepts free and BYOL SKUs. The offering must be compatible with [pricingmodels](https://azure.microsoft.com/en-us/marketplace/faq/) supported by the Azure Marketplace, as described in **Section 5** of this document.
  
  -   Link to customer support details
 
@@ -120,8 +120,8 @@ SKUs that utilize different pricing models.
 
 | **Pricing Model** | **Description** | **Applicable to** |
 | --- | --- | --- |
-| **Free** |Free SKU. Customers are not charged Azure Marketplace fees for use of the offering. Prices for free SKUs may not be increased to non-zero amounts.| Virtual Machine Images<br/>Customized Services<br/>ARM Templates|
-| **BYOL** |Bring-Your-Own-License (BYOL) SKU.  Customers obtain outside of the Azure Marketplace the right to access or use the offering and are not charged Azure Marketplace fees for use of the offering in the Azure Marketplace.|Virtual Machine Images<br/>ARM Templates|
+| **Free** |Free SKU. Customers are not charged Azure Marketplace fees for use of the offering. Prices for free SKUs may not be increased to non-zero amounts.|  - Virtual Machine Images<br/> - Customized Services<br/> - ARM Templates|
+| **BYOL** |Bring-Your-Own-License (BYOL) SKU.  Customers obtain outside of the Azure Marketplace the right to access or use the offering and are not charged Azure Marketplace fees for use of the offering in the Azure Marketplace.| - Virtual Machine Images<br/> - ARM Templates|
 
 
 Currently, the Marketplace is not able to support the ability of service
