@@ -1,6 +1,6 @@
 
 
-# Azure 市场虚拟机镜像发布指南
+# Azure 市场虚拟机镜像发布指南 [[English Version](https://market-publish.azure.cn/documentation/article/imagepublishguideen/)]
 
 Azure 市场上发布虚拟机镜像，您只要遵循以下步骤，就能轻松地将您的镜像发布到 Azure 市场。
 
