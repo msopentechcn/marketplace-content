@@ -1,6 +1,6 @@
 
 
-# Azure China Marketplace VM Image Publishing Guide
+# Azure China Marketplace VM Image Publishing Guide [[中文版本](https://market-publish.azure.cn/documentation/article/imagepublishguide/)]
 
 You can easily publish your image to Azure China Marketplace by following steps below.
 
