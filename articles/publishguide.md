@@ -1,4 +1,4 @@
-# Azure 市场服务商指南
+# Azure 市场服务商指南  [[English Version](https://market-publish.azure.cn/documentation/article/publishguideen/)]
 
 
 本指南提供独立软件服务商（ISV）从入驻 Azure 市场到产品发布所需遵循的全部流程。
