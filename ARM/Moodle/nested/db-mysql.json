@@ -44,35 +44,7 @@
                 "name": "[parameters('moodleCommon').mysqlPgresSkuName]",
                 "tier": "[parameters('moodleCommon').mysqlPgresSkuTier]",
                 "family": "[parameters('moodleCommon').mysqlPgresSkuHwFamily]"
-            },
-            "resources": [
-                {
-                    "apiVersion": "2015-09-01",
-                    "dependsOn": [
-                        "[concat('Microsoft.MySql/servers/', parameters('moodleCommon').serverName)]"
-                    ],
-                    "location": "[resourceGroup().location]",
-                    "name": "mysql-firewall-allow-lb",
-                    "properties": {
-                        "startIpAddress": "[parameters('lbPubIp')]",
-                        "endIpAddress": "[parameters('lbPubIp')]"
-                    },
-                    "type": "firewallRules"
-                },
-                {
-                    "apiVersion": "2015-09-01",
-                    "dependsOn": [
-                        "[concat('Microsoft.MySql/servers/', parameters('moodleCommon').serverName)]"
-                    ],
-                    "location": "[resourceGroup().location]",
-                    "name": "mysql-firewall-allow-ctlr",
-                    "properties": {
-                        "startIpAddress": "[parameters('ctlrPubIp')]",
-                        "endIpAddress": "[parameters('ctlrPubIp')]"
-                    },
-                    "type": "firewallRules"
-                }
-            ]
+            }
         }
     ],
     "outputs": {
