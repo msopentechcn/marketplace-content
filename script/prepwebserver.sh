@@ -1,7 +1,13 @@
 #!/bin/bash
 
 sudo apt-get update 
+
 sudo echo "begin of install" >> /home/testuser/start.log
+sudo echo "$1" >> /home/testuser/start.log
+sudo echo "$2" >> /home/testuser/start.log
+sudo echo "$3" >> /home/testuser/start.log
+sudo echo "$4" >> /home/testuser/start.log
+
 sudo apt-get install -y apache2
 if [ "$1" = "True" ]; then
 	if [ "$4" = "16.04.0-LTS" ]; then
