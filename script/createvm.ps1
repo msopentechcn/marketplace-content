@@ -1,12 +1,12 @@
 ﻿Param(
     [string]$resourcegroup,  #resource group of deployment
     [string]$vhduri,         #source url of vhd file
-    [string]$size,      #default: "Standard_D1_v2"
+    [string]$size,           #default: "Standard_D1_v2"
     [string]$osLinuxOrWindows,    #default: linux
-    [string]$ports,      #default: 22
+    [string[]]$ports,       #default: defaut linux:(22,443,80), windows:(3389,443,80)
     [string]$osusername,  #default: imtestuser
     [string]$ospassword,  #default: a@968^!Xm
-    [string]$location  #default: China North
+    [string]$location     #default: China North
 )
 
 # Default values
@@ -14,7 +14,7 @@ $vmSizes = ("Standard_D1_v2") 		# Example for Multi-sizes: ("Standard_A2_v2","St
 $osType = "linux"
 $linuxVmPorts = ("22","443","80")
 $winVmPorts = ("3389","443","80")
-$vmPorts = $linuxVmPorts
+[System.Collections.ArrayList]$vmPorts = $linuxVmPorts
 $userName = "imtestuser"
 $passWord = "a@968^!Xm"
 $vmLocation = "China North"
@@ -33,12 +33,12 @@ $helpDocument = "
     Grammar:
         ./createvm.ps1 -resourcegroup XXX
             -vhduri   https://xxx.blob.core.chinacloudapi.cn/xxx/xxx.vhd
-            -size     Standard_A2_v2,... [default Standard_D1_v2]
-            -osLinuxOrWindows   linux|windows      [default linux]
-            -ports     port1,port2...     [defaut linux:80, windows:3389]
-            -osusername xxx                [default imtestuser]
-            -ospassword xxx                [default a@968^!Xm]
-            -location 'China North'    [default 'China North']
+            -size     Standard_A2_v2           [default Standard_D1_v2]
+            -osLinuxOrWindows   linux|windows  [default linux]
+            -ports     port1,port2...          [defaut linux:22,443,80, windows:3389,443,80]
+            -osusername xxx                    [default imtestuser]
+            -ospassword xxx                    [default a@968^!Xm]
+            -location 'China North 2'          [default 'China North']
             -help
 
     Example:
@@ -64,14 +64,14 @@ if(![String]::IsNullOrEmpty($osLinuxOrWindows))
 }	
 if(![String]::IsNullOrEmpty($ports))
 {
-    $vmPorts = $ports.Split(",")
+    $vmPorts = $ports
 } elseif($osType.ToUpper() -eq "WINDOWS") {
     $vmPorts = $winVmPorts
 }
-if($osType.ToUpper() -eq "LINUX" -and $vmPorts -notcontains 22){
-    $vmPorts += (22)
-} elseif ($osType.ToUpper() -eq "WINDOWS" -and $vmPorts -notcontains 3389){
-    $vmPorts += (3389)
+if($osType.ToUpper() -eq "LINUX" -and !$vmPorts.Contains("22")){
+    $vmPorts.Add("22")
+} elseif ($osType.ToUpper() -eq "WINDOWS" -and !$vmPorts.Contains("3389")){
+    $vmPorts.Add("3389")
 }
 if(![String]::IsNullOrEmpty($osusername))
 {
@@ -156,7 +156,7 @@ function CopyVHD($fileName, [Microsoft.Azure.Commands.Common.Authentication.Abst
     return $copyStatus.Status
 }
 
-function CreateNSGGroupRule($resourceGroupName, $vmLocation, $nsgName, $ports){
+function CreateNSGGroupRule($resourceGroupName, $vmLocation, $ports, $nsgName){
     $priority = 100
     $ruleArr = New-Object System.Collections.ArrayList
     foreach($port in $ports){
@@ -166,7 +166,7 @@ function CreateNSGGroupRule($resourceGroupName, $vmLocation, $nsgName, $ports){
         $ruleArr.Add($rule)
         $priority = $priority + 1
     }
-    $nsg = New-AzureRmNetworkSecurityGroup -ResourceGroupName $resourceGroupName -Location $vmLocation -Name $nsgName -SecurityRules $ruleArr -Force  -WarningAction Ignore   
+    $nsg = New-AzureRmNetworkSecurityGroup -ResourceGroupName $resourceGroupName -Location $vmLocation -Name $nsgName -SecurityRules $ruleArr -Force  -WarningAction Ignore
     return $nsg
 }
 function CreateVM($resourceGroupName, $vmLocation, $vmSize, $osType, $vmPorts, $vmUser, $vmPwd, $osDiskUrl, $vhdName, $vmName, $subnetName, $vnetName, $pubIpName, $nicName, $osDiskName)
@@ -183,7 +183,7 @@ function CreateVM($resourceGroupName, $vmLocation, $vmSize, $osType, $vmPorts, $
 	
 	#Create NSG
     $nsgRuleName = $vmName + "-nsg"
-    $nsg = CreateNSGGroupRule $resourceGroupName $vmLocation $nsgRuleName $vmPorts
+    $nsg = CreateNSGGroupRule $resourceGroupName $vmLocation $vmPorts $nsgRuleName 
 	
     #Create Network Interface
     $nic = New-AzureRmNetworkInterface -Name $nicName -ResourceGroupName $resourceGroupName -Location $vmLocation -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $publicIP.Id -NetworkSecurityGroupId $nsg.Id -Force
@@ -312,13 +312,21 @@ function main(){
 		if($realVmName)
         {
             $ip = (Get-AzureRmPublicIpAddress -Name $pubIpName -ResourceGroupName $resourcegroup).IpAddress
+            $portsStr = $NULL;
+            for($i = 0; $i -lt $vmPorts.Count; $i ++){
+                if ($i -eq 0) {
+                    $portsStr = $vmPorts[$i]
+                } else {
+                    $portsStr += ("," + $vmPorts[$i])
+                }
+            }
             Write-Host ("`r`nDeployment finished")
             Write-Host (" Resource Group: {0}" -f $resourcegroup)
             Write-Host (" VM Name       : {0}" -f $vmName)
             Write-Host (" VM Size       : {0}" -f $vmSizes)
             Write-Host (" OS Type       : {0}" -f $osType)
             Write-Host (" IP Address    : {0}" -f $ip)
-            Write-Host (" OS Ports      : {0}" -f $vmPorts)
+            Write-Host (" OS Ports      : {0}" -f $portsStr)
             Write-Host (" User Name     : {0}" -f $userName)
             Write-Host (" Password      : {0}" -f $passWord)
             Write-Host (" VM Location   : {0}" -f $vmLocation)
