@@ -1,0 +1,83 @@
+﻿<div id="docs-content">
+    <h1>Azure Marketplace Service Provider Guide [<a href="../publishguide/">中文版</a>]</h1>
+    <p>This guide provides ISV overall procedures from entering Azure Marketplace to product release.</p>
+    <h2>Scope</h2>
+    <ul>
+        <li>This guide is intended for ISVs that wish to provide virtual machine (hereinafter refer to as VM) image products, ARM templates and custom services (i.e. solutions) for Chinese users in Azure Marketplace by Microsoft Azure, which are operated by 21Vianet.</li>
+        <li>This guide does not apply to service providers (such as SaaS providers, API service providers, etc.) offering non-VM images or custom service offerings.</li>
+    </ul>
+    <h2>What is Azure Marketplace</h2>
+    <p>Azure Marketplace is an image repository for third-party ISVs to publish their image and custom services; and to help Azure users quickly create VM instances, clusters or find suitable Azure-based solutions, which helps connect Azure users, Azure ISVs or partner directly.</p>
+    <p>Azure Marketplace makes it easier to find, retrieve, and use well-tested and fully tested applications on the Azure platform and makes sure the application running smoothly on Azure.</p>
+    <p>ISVs, through Azure Marketplace, can bring new business channels and users; and dramatically simplify the software promotion, management and deployment.</p>
+    <h2>Product</h2>
+    <p>Azure Marketplace currently supports VM Image, ARM Template, and Custom Services. More products will be supported in the future.</p>
+    <h2>Business model</h2>
+    <p>Azure Marketplace currently supports free and Bring Your Own License (BYOL) model.</p>
+    <p>The following table describes business models currently supported in Azure Marketplace. A product / service can include SKUs that use different pricing models.</p>
+    <table>
+        <thead>
+            <tr>
+                <th><strong>Pricing model</strong></th>
+                <th><strong>Description</strong></th>
+                <th><strong>Object</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Free</td>
+                <td>Free SKU. No charge for Azure Marketplace and the product / service.</td>
+                <td>VM image, ARM template</td>
+            </tr>
+            <tr>
+                <td>Free Trial</td>
+                <td>SKUs are free in limited time. During the trial period, Azure Marketplace fees will not be charged for usage of the product. After the trial expires, customers using the product are automatically charged based on the standard rates. Azure Marketplace does not currently prevent users from creating multiple subscriptions for free trial products. Service providers that create free trial product subscriptions for customers are expected to provide the appropriate restrictions.</td>
+                <td>VM image, ARM template</td>
+            </tr>
+            <tr>
+                <td>BYOL</td>
+                <td>Comes with a license (BYOL) SKU. Customer is entitled to access or use the Product / Service outside of the Azure Marketplace and does not charge the customer for the Azure Marketplace fee due to Customer's usage of the Product / Service in it.</td>
+                <td>VM image, ARM template</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Azure Marketplace Release Process</h2>
+
+    <h3>1.	Become an Azure Marketplace service provider</h3>
+    <p>Before registration, please confirm the requirements to service providers in Azure Marketplace. Please refer to <a href="/Documentation/isvpolicy/">Azure Marketplace Participation Policy</a>.</p>
+    <ul>
+        <li>Submit an online application to register as an Azure Marketplace Provider: <a href="/ISV/New/">Vendor Registration</a></li>
+        <li>Tip: Make sure you have such an Azure account before submitting your registration information: someone@example.partner.onmschina.cn; if you do not have it, you can apply directly: <a href="https://www.azure.cn/pricing/1rmb-trial-full/?form-type=identityauth">Azure Trial Application Form</a> (Please select "Enterprise Application" on registration)</li>
+    </ul>
+    <div class="wa-note wa-note-default"><span class="wa-icon wa-icon-information"></span><h5><a name="note"></a>Prompt:</h5> <p> Note: You must register with a legally operating entity with a registered address in PRC.</p></div>
+    <ul>
+        <li>
+            <p>Azure team will review the application and the results will be sent to your designated email address to contact you</p>
+        </li>
+        <li>
+            <p>After obtaining the service provider account, the service provider can log in to Azure Marketplace, browsing Azure Marketplace content and related technical documents.</p>
+        </li>
+    </ul>
+    <h3>2. Build a VM image, an ARM template or a custom service for deployment</h3>
+    <ul>
+        <li>For a detailed process of creating a VM image, please refer to:  <a href="/Documentation/imageguide/">Azure Marketplace Virtual Machine Image Creation Guide</a></li>
+        <li>For the process of making an ARM template, please refer to: <a href="https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-authoring-templates">Creating an ARM Template</a></li>
+        <li>For custom services, solution-related documents and other resources need to be prepared.</li>
+        <li>After the image is created and tested, it needs to be uploaded to a public Azure storage account. The ARM template file can be stored in an Azure storage account or a non-Azure storage account</li>
+        <li>You can contact Azure Marketplace <a href="/contact/feedback">Technical Support</a></li>
+    </ul>
+    <h3>3. Pre-release</h3>
+    <p>Pre-release refers to simulating actual product launch in a "sandbox" environment. Make sure you have obtained the service provider account before posting. You can refer to <a href="/documentation/article/imagepublishguide/">Azure Marketplace VM Image Release Guide</a> and other release documents.</p>
+    <ul>
+        <li>Log in to the publishing portal using your service provider account</li>
+        <li>Fill in the release application form, submit an image, ARM template file or custom service before applying for release</li>
+        <li>After approval, Azure Marketplace team informs the service provider of pre-online testing and verification by email</li>
+        <li>After finishing testing, the service provider needs to inform the Azure marketing team of the test results for confirmation</li>
+    </ul>
+    <h3>4. Release</h3>
+    <ul>
+        <li>After the service provider passes the test, Azure Marketplace team will double confirm your product and publish it to Azure Marketplace</li>
+        <li>After the announcement is completed, you will be notified by email that your product has been officially released</li>
+        <li>You can view your published images, ARM templates, or custom services in Azure Marketplace</li>
+    </ul>
+</div>

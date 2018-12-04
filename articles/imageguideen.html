@@ -1,0 +1,74 @@
+﻿<div id="docs-content">
+    <h1>Azure Marketplace Virtual Machine Image Producing Guide [<a href="../imageguide/">中文版</a>]</h1>
+    <p>This guide introduces Azure Marketplace ISV (independent software vendors) the main process for producing VM images, uploading to Azure, and pre-publishing test preparation.</p>
+    <p>There are two ways to make a VM image. One is to deploy the operating system VM directly on the Azure platform, install the application software and build an image; the other is to create an operating system locally through Hyper-v, create a VHD image file after the application software is installed, and then upload the VHD file to build a mirror on Azure. The first is Azure -customized method with relatively simple operation which is suitable for ordinary images; while the second one is a user-customized operating system with relatively complicated operation, which is suitable for images that require special operating system customization.</p>
+    <p>For the management tools you may use, please refer to <a href="https://docs.microsoft.com/zh-cn/powershell/azure/overview?view=azurermps-5.0.0">Azure PowerShell Overview</a> and <a href="https://docs.azure.cn/zh-cn/cli/install-azure-cli?view=azure-cli-latest">Install Azure CLI 2.0</a>.</p>
+    <p>If the downloaded PowerShell script fails to execute, it is possibly due to Windows security isolation. You can select "unblock" in the property page of the script file, unlock the file and then execute it.</p>
+    <h2>Build and test Azure Images</h2>
+    <p>There are mainly four ways to build a VHD file. Generally, you can choose the first two simple methods, which operate in ARM (Azure Resource Manager).</p>
+    <h3>1. Build a Linux application image on Azure</h3>
+    <p>To build a Linux application image on Azure, please refer to the document <a href="https://docs.azure.cn/zh-cn/virtual-machines/linux/tutorial-custom-images#next-steps">Creating a Linux Azure VM Image Using the CLI</a>. Please note:</p>
+    <ul>
+        <li>When creating a virtual machine for configuration on Azure platform, select "HDD" for disk; for "Whether use managed disk" in "Settings" -> "Storage" option, select "No". Otherwise VHD files may not be created.</li>
+        <li>In the reference document, the VHD image has been prepared and can be viewed in the resource group on the portal web administration page after “you have deallocated VMs and mark them as universal”. In the subsequent test, you can manage "create a VM from the image" in the portal Web management page.</li>
+    </ul>
+    <h3>2. Build a Windows application image on Azure</h3>
+    <p>To build a Windows application image on Azure, Please refer to the document <a href="https://docs.azure.cn/zh-cn/virtual-machines/windows/tutorial-custom-images">Using PowerShell to Create a Windows Azure Virtual Machine Image</a> . Please note:</p>
+    <ul>
+        <li>When creating a virtual machine for configuration on Azure platform, select "HDD" for disk; for "Whether use managed disk" in "Settings" -&gt; "Storage" option, select "No". Otherwise VHD files may not be created.</li>
+        <li>•	In the reference document, for "Deallocating a VM and marking it as universal", you should log in to Azure (Login-AzureRmAccount -EnvironmentName AzureChinaCloud) in ARM firstly before viewing VHD files in the resource group on the portal web administration page. Subsequent tests, "from the image to create a VM" in the portal Web management page operation, this is relatively simple. In the subsequent test, you can manage "create a VM from the image" in the portal Web management page.</li>
+    </ul>
+    <h3>3. Build a Linux application image from outside Azure (local)</h3>
+    <p>To build an Azure-based CentOS Linux application image locally, please refer to the documentation <a href="https://docs.azure.cn/zh-cn/virtual-machines/linux/create-upload-centos">To Prepare a CentOS-based Virtual Machine for Azure</a>. For how to migrate a VHD image to the Azure platform, refer to <a href="https://docs.azure.cn/zh-cn/virtual-machines/linux/sa-upload-vhd">Uploading a Custom Disk Using Azure CLI 2.0 and Creating a Linux VM from it</a> .</p>
+    <p>For Linux or windows images, please refer to <a href="https://docs.azure.cn/zh-cn/virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script">PowerShell Sample Scripts for Uploading Universalized VHDs to Azure</a>.</p>
+    <h3>4 Build a Windows application image from outside Azure (local)</h3>
+    <p>
+        To build an Azure-based Windows application image either locally or outside of Azure, please refer to the document <a href="https://docs.azure.cn/zh-cn/virtual-machines/windows/prepare-for-upload-vhd-image#complete-recommended-configurations">Ready for Windows VHD or VHDX to Upload to Azure</a>.
+        For how to migrate a VHD image to Azure, refer to <a href="https://docs.azure.cn/zh-cn/virtual-machines/windows/upload-generalized-managed">Uploading a Generic VHD and use it to create a new VM in Azure</a>, or <a href="https://docs.azure.cn/zh-cn/virtual-machines/windows/sa-upload-generalized">Uploading a Universal VHD to Azure Using PowerShell and Creating a New VM</a>.
+    </p>
+    <p>As for Linux or windows mirroring, please refer to <a href="https://docs.azure.cn/zh-cn/virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script"> Uploading a Universal VHD to Azure PowerShell Sample Script</a> for VHD upload and script creation.</p>
+    <p>In addition, if you need to migrate VHDs from other platforms to Azure platform, please refer to <a href="https://docs.azure.cn/zh-cn/virtual-machines/windows/on-prem-to-azure?toc=%2fvirtual-machines%2flinux%2ftoc.json">Managed Disks Migrated from Amazon Web Services (AWS) and Other Platforms to Azure</a>.</p>
+    <h2>Image pre-publishing test to Azure Marketplace</h2>
+    <p>After VM image is built and tested, it cannot be released directly to Azure Marketplace since the VHD image file needs to be tested in (classic) mode (as opposed to ARM mode). This test requires a (classic) storage account under PowerShell.</p>
+    <ul>
+        <li>
+            <p>Make sure the VHD file is in the (classic) storage account. If your VHD file is not in the (classic) storage account, log in to the <a href="https://portal.azure.cn/">Azure Web Management Platform</a> and manually create a (classic) storage account for testing. Please download the PowerShell script <a href="https://raw.githubusercontent.com/msopentechcn/marketplace-content/master/script/vhdcopy.ps1" title="download">Copy the File from the Storage Account to the Classic Storage Account</a>. After updating the parameters, copy the VHD file from the existing storage account to the (classic) storage account. Note that the access policy for the storage container where the VHD source address in the script resides should be Blob or Container. In addition to PowerShell, you can also use tools such as AzCopy for copying, such as <a href="https://docs.azure.cn/zh-cn/storage/common/storage-use-azcopy">Using AzCopy on Windows to Transfer Data</a>.</p>
+        </li>
+        <li>
+            <p>Log in to the Azure platform in (classic) mode. Enter the following instructions in PowerShell:</p>
+            <ul>
+                <li>Add-AzureAccount -Environment AzureChinaCloud</li>
+                <li>Get-AzureSubscription</li>
+                <li>Select-AzureSubscription -SubscriptionID <subscription id=""> #Select the subscription for testing.</subscription></li>
+            </ul>
+        </li>
+        <li>
+            <p>Use PowerShell scripts to test VHD files. Download PowerShell Scripts <a href="https://raw.githubusercontent.com/msopentechcn/marketplace-content/master/script/createvm-classic.ps1" title="download">Create Virtual Machines in a Classic Way</a> and run to see whether the virtual machine is created successfully. In the script input parameter, "vhdUri" is the url address where the VHD is located. "StorageAccountName" and "subid" are the (classic) storage account where the virtual machine is created (an account that can be used by vhdUri) and the subscription ID.</p>
+        </li>
+        <li>
+            <p>After the test is completed, the resource group where the created virtual machine in the test resides needs to be manually removed from the Azure Management Platform.</p>
+            <div class="wa-note wa-note-default"><span class="wa-icon wa-icon-information"></span><h5><a name="note"></a>Prompt:</h5> <p>Note: Before VHD is released to Azure Marketplace, the container access policy where the VHD image file resides must be set to "Blob or Container" so that the VHD image can be published to the Azure Marketplace.</p></div>
+        </li>
+    </ul>
+    <h2>Checklist before image release</h2>
+    <p>Before submitting the image to Azure Marketplace, make sure the following checklist is all passed:</p>
+    <h3>Product image requirements</h3>
+    <p>Product images must meet the following requirements:</p>
+    <ul>
+        <li>For production environments. Azure Marketplace does not accept publishing testing products in principle</li>
+        <li>The image should be a self-contained image in which software components including the client should all be included</li>
+        <li>Do not contain any known defects, malware and viruses</li>
+        <li>Images must be rigorously tested for availability</li>
+        <li>For Linux mirroring, root login is disabled by default</li>
+        <li>For Linux mirroring, the mirror does not contain any user authentication key information</li>
+    </ul>
+    <h3>Product description requirements</h3>
+    <p>Provide a description that meets at least the mirror publishing form. For more information, see <a href="/documentation/article/imagepublishguide/">Azure Marketplace Virtual Machine Image Publishing Guide</a>. The content mainly includes but not limited to:</p>
+    <ul>
+        <li>Product Information (SKU, Service Provider Name, Product Name, Short Description, Full Description)</li>
+        <li>Product logo: 2 png-format images with fixed-size pixels (115x115, 255x115)</li>
+        <li>Product Image: it is used in the product description, which can be a product image or a product description image etc. with fixed-size pixel (533x324)</li>
+        <li>Mirror VHD File Address: The URL address of the Azure Blob where the VHD image file is published</li>
+        <li>Product after-sales service (customer service contact, time)</li>
+    </ul>
+</div>

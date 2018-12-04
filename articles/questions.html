@@ -1,0 +1,532 @@
+﻿<div class="doc-content documentation-yunban-5">
+            <div id="a1" class="doc-pane active">
+                
+                <!--最常见问题-->
+                <ul class="doc-group">
+                    <li class="expand">
+                        <h5 class="doc-ask doc-active"><span class="plus"></span>ISV注册成为 Azure 市场服务商</h5>
+                        <div>
+                            <p>
+                                注册成为 Azure 市场服务商的流程可以完全通过在线完成，只有注册成为服务商之后，才能在 Azure 市场上发布服务，Azure 市场的账号必须是由世纪互联运营的中国 Azure 账号，需要在中国版 Azure 注册。
+                            </p>
+                            <p>
+                                从法律上讲，必须在中国拥有公司或分公司等实体机构的组织方能在 Azure 市场上注册成为服务商。
+                            </p>
+                            <p>
+                                注册的过程中，如下图，Azure 账号为非必填项，但建议先申请 Azure 账号再注册 Azure 市场，如果没有申请，即使注册后也无法立即登录并发布镜像。
+                            </p>
+                            <p>
+                                当然如果没有填写 Azure 账号，注册后客服人员会与您沟通，帮助您申请 Azure 账号，完成账号和 Azure 市场的绑定。
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>注册 Azure 账号</h5>
+                        <div>
+                            <p>Azure 账号有1元订阅账号和标准订阅账号两种注册方式，1元订阅账号注册后也可以转为标准订阅账号。注意中国版 Azure 账号和 Global Azure 账号不能通用。</p>
+                            <p>Azure 账号注册说明以及入口： <a href="https://www.azure.cn/starter-guide/">Azure 入门指南</a>。</p>
+                            <p>通过 Azure 申请的账号都是超级管理员，超级管理员可以分配用户或普通管理员。超级管理员可以登录 <a href="https://account.windowsazure.cn">Azure 账号管理</a> 进行资源消耗的查看。</p>
+                            <p>
+                                注意关于1元试用账号需要注意的问题：
+                            </p>
+                            <ul>
+                                <li>1元账号注册后一定需要支付“1元”，否则账号不会分配订阅，也就不能在 Azure 市场上测试部署虚拟机。</li>
+                                <li>另外请注意，1元账号的额度和可用时间有一定的限制：<a href="https://www.azure.cn/offers/ms-mc-azr-44p/">1元试用订阅详情和限制</a>。</li>
+                                <li>标准预付费订阅详情：<a href="https://www.azure.cn/offers/ms-mc-arz-33p/">标准预付费产品</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>制作、测试和发布镜像</h5>
+                        <div>
+                            <p>制作镜像和发布镜像官方参考文档。</p>
+                            <ul>
+                                <li>镜像制作有两种方式，一般建议采用从 Azure 上构建镜像，除非需要操作系统定制。</li>
+                                <li>对于ARM，建议制作完毕后，先采用PowerShell工具或者Azure-cli工具在 Azure 上进行测试后，再将ARM文件发布到 Azure 市场。这样可以便于ARM的测试和纠错。对单机镜像来说，如果是在本地制作，也建议这样做。PowerShell和Azure-cli的工具下载地址下载 <a href="https://azure.microsoft.com/zh-cn/downloads/"> Azure 命令行工具</a></li>
+                                <li>ARM方式部署的资源只能 在 <a href="https://portal.azure.cn">Azure 门户</a> 中方能看到，所以此时classic中的订阅使用情况统计有时候不准确。可以在 <a href="https://portal.azure.cn">Azure 门户</a> 中或 <a href="https://account.windowsazure.cn"> Azure账号订阅管理 </a>中进行查看。</li>
+                            </ul>
+                            <p>一般的流程，不管是ISV入驻流程、镜像发布流程或者镜像部署流程，完全采用online方式完成。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>什么是 Azure 市场？</h5>
+                        <div>
+                            <p>Azure 市场是一个联机应用程序和服务市场，它使创业公司和独立软件服务商 (ISV) 能够为 Azure 客户提供解决方案。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Azure 市场的优势是什么？</h5>
+                        <div>
+                            <p>Azure 市场与 Azure 合作伙伴生态系统结合为一个统一的平台，以便更好地为我们的客户和合作伙伴提供服务。仅需几次点击，这就可改善现有体验，使搜索、购买和部署多种应用程序和服务更加轻松。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Azure 市场中提供哪种类型的产品？</h5>
+                        <div>
+                            <p>Azure 市场当前提供虚拟机镜像、ARM、定制服务和解决方案中心等。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="a5" class="doc-pane">
+                <!--服务商入住-->
+                
+                <ul class="doc-group">
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>第一次填写入驻申请时信息填写不完整（例如非必填项不填），是否可以通过ISV审核？</h5>
+                        <div>
+                            <p>申请入驻时，非必填项例如“产品”，“市场”和“服务”等建议填写完整，否则可能审核比较慢或通不过。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>分别有一个 Azure 超级账号和普通账号，用Azure超级账号注册，是否能用普通账号发布？</h5>
+                        <div>
+                            <p>Azure 市场中的服务商账号可以绑定多个 Azur e账号，如果账号已经和 Azure 市场服务商账号绑定，则可以发布镜像。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>三证合一后机构代码ID是否可以填营业执照代码？</h5>
+                        <div>
+                            <p>三证合一后机构代码ID可以填唯一的号码。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>ISV注册 Azure 市场时填写的产品授权文件是软件著作声明还是第三方授权使用书？</h5>
+                        <div>
+                            <p>软件著作声明或第三方授权使用书都可以。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>如何注册成为 Azure 市场服务商，需要准备什么材料？</h5>
+                        <div>
+                            <p>请参考 <a href="~/documentation/article/imagepublishguide/">发布商指南</a> 。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>ISV怎么查看 Azure 市场账号注册的进度？</h5>
+                        <div>
+                            <p>账号申请和镜像发布都是完全通过线上进行，用户一般会在申请后三个工作日内收到审核结果邮件，如果长时间收不到邮件，可联系 Azure 市场的运营人员了解账号申请进度。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>原先的 Azure 账号或密码丢了，怎样重新绑定一个新账号？</h5>
+                        <div>
+                            <p>请按照登录页面上的密码找回步骤操作，如果您不是超级账号，可以找到超级账号管理员重置您的密码。如果忘记了超级账号或有希望用一个新账号，请咨询世纪互联客服。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>客户如果需要部署或购买ISV的镜像，需要ISV和客户签署线下合同吗？</h5>
+                        <div>
+                            <p>Azure 市场采用BYOL商业模式，客户和ISV可以线下沟通协商是否签署线下合同，付款方式也由双方线下协商决定，ISV的“镜像最终用户协议”会对双方的权利义务进行规定。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Azure 市场里会展现ISV的镜像价格吗？</h5>
+                        <div>
+                            <p>Azure 市场里的产品页面是否显示价格由ISV厂商自行决定。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>企业账户需要预付款吗？软件、Image和部署虚拟机的付费等如何解决？</h5>
+                        <div>
+                            <p>企业账号可以进行预付款，也可以使用1元试用账号的额度。但这个账号目前只能用于支付部署虚拟机的费用，不能用于支付软件或镜像本身的费用。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>后续如果做测试，使用计算资源，是后付费吗？</h5>
+                        <div>
+                            <p>测试过程中1元试用账号中的赠送额度用完后，需要转为标准账号并续费才能继续使用 Azure 账号进行部署测试。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>入驻 Azure 市场有没有费用？</h5>
+                        <div>
+                            <p>入驻 Azure 市场和发布镜像不对ISV收取任何费用。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Azure 市场上可以上线SaaS服务吗？</h5>
+                        <div>
+                            <p>Azure 市场目前不支持SaaS服务，SaaS服务建议上线到 <a href="https://ctwamp.com/">https://ctwamp.com/</a> 。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="a2" class="doc-pane">
+                <!--镜像制作与开发-->
+                
+                <ul class="doc-group">
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>镜像制作中，WALinuxAgent选项是否为必选？可以利用WALinuxAgent开发自己的虚拟机操作系统吗？</h5>
+                        <div>
+                            <p>是必选，否则制作的镜像会无法部署成功。WALinuxAgent源代码目前是开放的，您可以针对您自己的服务器定制开发WALinuxAgent，<a href="https://github.com/Azure/WALinuxAgent">源代码地址</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Azure Linux Agent 做什么用？制作虚拟机的过程中，是否必须安装？</h5>
+                        <div>
+                            <p>在 Azure 平台制作Linux虚拟机的过程中，必须选择安装WALinuxAgent。具体请参考相关技术文档 <a href="https://www.azure.cn/documentation/articles/virtual-machines-linux-agent-user-guide/"> Azure Linux 代理用户指南 </a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>网站上镜像制作的官方文档是基于CentOS6.x，这个制作方法是否可用与ubuntu上？</h5>
+                        <div>
+                            <p>Ubuntu和CentOS的镜像制作流程不完全一样。参见 <a href="https://docs.microsoft.com/zh-cn/azure/virtual-machines/virtual-machines-linux-create-upload-ubuntu">Ubuntu镜像制作参考文档</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>假设 Azure 市场上的ARM模板链接指向github，如果修改github上对应的ARM模板内容，对应的 Azure 市场上的ARM会被自动更新吗？</h5>
+                        <div>
+                            <p>需要在 Azure 市场的ARM上发布新版本，并且新的ARM链接地址与原来的地址不能相同。当然也可以通过发布新的ARM产品发布新版本。同样对于Image也是如此。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>ARM如何制作和在本地进行测试？</h5>
+                        <div>
+                            <p>如何制作镜像请参考 Azure 市场官方文档</p>
+                            <p><a href="https://www.azure.cn/documentation/articles/resource-group-authoring-templates">ARM模板的结构和语法</a> </p>
+                            <p><a href="https://www.azure.cn/documentation/articles/resource-manager-template-walkthrough">创建和部署ARM</a></p>
+                            <p>如何使用Azure-cli测试ARM请参考文档</p>
+                            <p><a href="https://www.azure.cn/documentation/articles/resource-group-template-deploy-cli">如何使用Azure-cli测试ARM</a></p>
+                            <p>如何使用Powershell测试ARM请参考文档</p>
+                            <p><a href="https://www.azure.cn/documentation/articles/resource-group-template-deploy">如何使用Powershell测试ARM</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>在Windows上运行Azure-cli，Linux上可以吗？</h5>
+                        <div>
+                            <p>Azure-cli是跨平台工具，在Windows和Linux都可以运行，但PowerShell不行。请参考，下载 <a href="https://azure.microsoft.com/zh-cn/downloads/"> Azure 命令行工具</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>部署虚拟机的时候，需要将4个钱包文件从website拷贝至4台服务器中，如何实现？</h5>
+                        <div>
+                            <p>可以利用ARM方式，采用ARM的extensions功能，在系统启动的时候将钱包文件拷贝至服务器。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>ARM文件怎样获取服务器IP地址信息，并将其写入系统启动配置文件中？</h5>
+                        <div>
+                            <p>ARM不支持动态获取IP信息，但您可以采用ARM的extensions功能在系统启动的时候将IP地址写入配置文件中。</p>
+                            <p>另外，<a href="https://docs.microsoft.com/zh-cn/azure/virtual-network/virtual-networks-static-private-ip-arm-pportal">设置静态IP地址</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>镜像部署到 Azure 完成后，怎样运行指令启动部署的系统？</h5>
+                        <div>
+                            <p>镜像部署到 Azure 之后镜像操作系统自动启动，但有的时候需要等待几分钟待系统完全启动后方可登录。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>将 Azure 上的镜像发布到 Azure 市场，镜像所在的Blob属性如何设置？</h5>
+                        <div>
+                            <p><a href="https://www.azure.cn/documentation/services/storage/">Storage相关文档</a> ，上传Image的时候，需要将Image所在的存储账号中的Blob属性设置成公共Blob(Classic进入Storage->容器->编辑，Ibiza进入Storage->Blob->Container->访问策略中进行编辑操作)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>虚拟机创建完后如何将软件文件等传输到虚拟机。</h5>
+                        <div>
+                            <p>Windows直接可以采用远程桌面进行文件传输; Linux可以使用文件传输工具，例如：WinSCP等，在操作系统中直接操作即可。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Image软件License的信息如何保护？</h5>
+                        <div>
+                            <p>请参考 <a href="https://docs.microsoft.com/zh-cn/information-protection/develop/security-guidelines">Azure 安全相关的信息</a> ，但License相关的保护措施需要ISV自行解决。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Azure 有哪些API可以提供License的绑定？</h5>
+                        <div>
+                            <p>请参考 <a href="https://docs.microsoft.com/zh-cn/rest/api/gettingstarted/"> Azure API信息</a> ，但 Azure 目前没有提供License相关的API。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>怎么能取得 Azure 的订阅号和服务器的编号？</h5>
+                        <div>
+                            <p>用户部署的VM的信息(ID、类型等)和订阅等信息都可以通过API获取，查询 （<a href="https://docs.microsoft.com/zh-cn/rest/api/apimanagement/subscriptions">订阅API</a>），查询（<a href="https://docs.microsoft.com/zh-cn/rest/api/compute/virtualmachines#VirtualMachines_Get">VM的API</a> )。您也可以通过登录 Azure 管理门户人工查询。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="a3" class="doc-pane">
+                <!--镜像发布-->
+                
+                <ul class="doc-group">
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>在虚拟机上应用服务安装部署完成后，怎样将这个服务发布到 Azure 市场呢？</h5>
+                        <div>
+                            <p>请登录您的 Azure 账号后，完成镜像制作后，再登录 Azure 市场发布您的镜像。具体请参考 <a href="~/documentation/article/imageguide/和Azure">Azure 镜像制作指南</a>和 <a href="~/documentation/article/imagepublishguide/">Azure 镜像发布指南</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>镜像测试阶段是否需要填写详细描述？是否需要上传用户手册？若需要修改，是否有参考范例？</h5>
+                        <div>
+                            <p>测试阶段可以填写详细描述，也可以在镜像测试成功后再填写。是否上传用户手册由服务商自行决定，但原则是产品资料越详细越好。产品详细信息的填写和修改可参考 Azure 市场上已经发布的产品。具体规范请参考在 <a href="~/documentation/article/imagepublishguide/">Azure 镜像发布指南</a>中的“虚拟机内容规范”。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>ISV审核通过后虚拟机镜像的发布流程是怎样的？</h5>
+                        <div>
+                            <p>
+                                请参见<a href="~/documentation/article/imageguide/">虚拟机镜像制作指南</a>
+                                和 <a href="~/documentation/article/imagepublishguide/">Azure 镜像发布指南</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>ARM是什么？</h5>
+                        <div>
+                            <p>请参考官方文档 <a href="https://www.azure.cn/documentation/articles/resource-group-overview/"> Azure 资源管理器概述</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>发布镜像的时候，可以一个产品选择多个镜像吗？因为需要多个镜像的组合。</h5>
+                        <div>
+                            <p>不能选择多个镜像，可以通过ARM解决这个问题，ARM可以组合多个虚拟机镜像和其它资源，通过 Azure 市场发布并一键部署到 Azure 。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>假如我们想更新ARM模板版本，是需要重新发布一个应用，还是可以在旧版本应用管理界面里使用“发布新版本”的功能？</h5>
+                        <div>
+                            <p>请使用“发布新版本”功能。注意新版本的ARM的url地址和原有版本不能一样，否则新版本会失效。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>ARM或Image开发中，正式发布或更新前需要先进行测试，所以一般以“发布新应用”的方式先发布一个测试版本，测试通过后再发布正式版本。如何解决测试和正式版本的多版本管理问题？</h5>
+                        <div>
+                            <p>测试版本和正式版本不需要分开，在您发布ARM或Image并测试通过之后，需要点击“申请上架”，经管理员审核后才能正式发布成功，所以一般不需要进行测试版本和正式版本的特别管理。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>镜像如何区分是ARM还是Image？</h5>
+                        <div>
+                            <p>所有的镜像“平台”字段显示为“ARM”，也可以在 Azure 市场页面中搜索“ARM”找到所有的ARM模板。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Azure 市场发布时，镜像的VHD地址或ARM的url地址可以放到 Azure 以外？</h5>
+                        <div>
+                            <p>镜像VHD地址必须放在 Azure 上； ARM模板地址可以放在 Azure 之外，比如Github。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>中国的 Azure 市场和其它地区的 Azure 市场有什么关系？中国的 Azure 市场发布的镜像会出现在其它地区的 Azure 门户中吗？</h5>
+                        <div>
+                            <p>目前中国的 Azure 市场和其它地区的 Azure 市场独立运营，中国的 Azure 市场发布的镜像不会出现在其它地区的 Azure 门户和 Azure 市场中，反之亦然。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>中国版 Azure 市场和Global Azure 市场有什么关系？中国版 Azure 市场镜像他们会不会出现在 Azure 门户里面吗？</h5>
+                        <div>
+                            <p>目前中国版 Azure 和中国境外的 Azure 都是独立运营，中国版 Azure 中的镜像会出现在中国版 Azure 门户当中。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Global Azure 市场上的镜像如何迁移到中国版 Azure 市场？</h5>
+                        <div>
+                            <p>请联系Global相关镜像的发布者ISV或客服人员，需要提供未有标签的VHD镜像文件。Global和中国的VHD镜像文件格式是一样的，但由于法务和商务问题，VHD镜像文件会有Global Azure标签，不能在中国 Azure 市场上直接使用。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>本地制作的镜像可以直接上传到 Azure 并发布到 Azure 市场吗？</h5>
+                        <div>
+                            <p>可以，但建议您先在本地测试您的镜像，因为本地制作镜像的过程相对复杂，出错误的几率比较高。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>在 Azure 市场中发布内容的条件是什么？</h5>
+                        <div>
+                            <p>Azure 市场合作伙伴必须具有与在 Azure 上生成应用程序并运行其业务的开发人员和 IT 专业人员相关的服务。他们还必须提供客户服务级别协议、隐私策略以及电话和联机支持。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Microsoft 将如何向开发人员和 IT 专业人员推销 Azure 市场？</h5>
+                        <div>
+                            <p>Azure 市场是中国版 Azure 的重要组成部分。使用 Azure 的开发人员和 IT 专业人员每次登录到 Azure 门户时都可以接触 Azure 市场的镜像。除此之外，Azure 市场还会进行流量推广和市场推广等活动。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>是否有与在 Azure 市场上进行发布相关联的费用？</h5>
+                        <div>
+                            <p>在 Azure 市场上发布不收取费用。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>如何报告内容侵权？</h5>
+                        <div>
+                            <p>你可以通过 Azure 市场 <a href="~/contact/feedback">反馈</a>系统来报告内容侵权行为，Azure 市场将尽快响应您的请求。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>发布者可在哪些国家/地区销售 Azure 市场？</h5>
+                        <div>
+                            <p>总部、分部或代理商/经销商设在中国的发布者可在 Azure 镜像市场进行销售。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>我为何应考虑在 Azure 市场上发布应用程序？ 它将如何使我受益？</h5>
+                        <div>
+                            <p>Azure 市场为发布者提供向 Azure 客户推广和销售产品及服务的市场。你将即刻获得中国市场和 Azure 的企业客户群，包括 66% 以上的财富 500 强公司和诸多世界领先的开发商。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="a4" class="doc-pane">
+                <!--镜像部署与维护-->
+                
+                <ul class="doc-group">
+                    
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>在 Azure 市场平台部署Linux系统的相关镜像时配置的用户名/密码，和虚拟机的root用户是什么关系？用户能否更改root对应的密码？ </h5>
+                        <div>
+                            <p>Azure 市场平台部署镜像时配置的用户名/密码缺省拥有root权限。如果要修改root用户的密码，需要登录系统后，使用sudo命令修改root密码。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>虚拟机部署成功后，在浏览器输入域名为何页面打不开？</h5>
+                        <div>
+                            <p>可能的原因如下：</p>
+                            <ul>
+                                <li>由于Image的制作，没有配置相应的端口号或其它制作原因。</li>
+                                <li>由于部署成功后，系统初始化不一定马上完成，所以可能需要等待几分钟。</li>
+                                <li>可以登录虚拟机，查看对应的服务是否已经启动。</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Azure 市场所有的镜像本身都是免费的吗？</h5>
+                        <div>
+                            <p>Azure 市场采用BYOL模式，Azure 市场中有免费镜像，也有收费镜像。是否收费以及价格均由服务商自行决定，用户可以通过服务商的使用说明进行了解，并通过电话或邮箱等和服务商联系并线下签署购买协议。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Image或ARM部署后，虚拟机的内网和公网IP地址会随时间变化？</h5>
+                        <div>
+                            <p>公网IP分为静态和动态IP地址，静态IP地址不会变化（需要单独付费），动态IP地址随时间可能会变化。内网IP地址不会变化。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>客户/ISV 订阅quota不够怎么办？如何完成测试？</h5>
+                        <div>
+                            <p>用户可以自行 <a href="https://www.azure.cn/support/support-ticket-form/">申请quota配额</a>，对于1元账号，建议升级为标准账号。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>申请1元账号为何没有订阅或者登录 Azure 市场后无法部署虚拟机？</h5>
+                        <div>
+                            <p>申请1元账号的时候，一定要支付1元钱才能获得订阅，请登录注册时填写的邮箱读取相关邮件进行支付或联系世纪互联客服。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>用户如何看 Azure 订阅的quota以及consumption？</h5>
+                        <div>
+                            <p>超级管理员可以登录账号 <a href="https://account.windowsazure.cn"> Azure 账号管理平台</a> 查看consumption，也可以登录Classic->“设置”->“使用情况查看订阅”。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Azure 市场上部署失败后，如何查看失败原因？</h5>
+                        <div>
+                            <p>请使用 Azure 账号登录 Azure 市场，页面右上角点击账号名称进入账户管理页面，然后请点击“虚拟机部署状态”页面查看以往所有部署的虚拟机信息，可以在页面中点击异常信息栏查看具体异常信息。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>使用Azure-cli创建了vnet和subnet，为什么Azure经典管理界面（Classic）上看不到呢？ </h5>
+                        <div>
+                            <p>在 <a href="https://portal.azure.cn">Azure 门户</a> 里面可以看到vnet和subnet，vnet和subnet需要包含在资源组下面。在 <a href="https://portal.azure.cn">Azure 门户</a> 下创建的vnet和subnet，Classic界面下看不到，但在Classic界面下创建的vnet和subnet，<a href="https://portal.azure.cn">Azure 门户</a> 中可以看到。这是由于 <a href="https://portal.azure.cn">Azure 门户</a> 下有资源组的概念，而Classic门户下没有资源组的概念。</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>能否选择将 Azure 市场购买内容部署在哪些 Azure 区域？</h5>
+                        <div>
+                            <p>客户可以选择部署到发布者启用的任何 Azure 数据中心区域。客户可用选择距离其服务最近的数据中心位置，以优化性能、管理预算。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>如果意外删除了 Azure 市场购买，能否“撤消”此操作？</h5>
+                        <div>
+                            <p>不能，删除不可更改。如果你意外删除了订阅，则可以通过再次购买来轻松地重新启动它，但会丢失任何未使用的功能或预付费服务，因此在删除订阅时要小心。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>Azure 是否跟踪依赖项？ 如果我尝试删除我的另一个应用程序正使用的 Azure 市场购买内容，是否会收到警告？</h5>
+                        <div>
+                            <p>不会，如果你删除应用程序依赖的购买内容，Azure 不会发出警告。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>如果我的 Azure 市场购买内容有任何对其他资产的依赖项（如 Azure 网站），我必须管理这些依赖项吗？</h5>
+                        <div>
+                            <p>不会自动管理 Azure 市场产品/服务的相关依赖项。请在使用之前仔细查看 Azure 市场购买内容的说明，以确定是否有你需要在部署之前注意的任何依赖项。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>我已将一个 Azure 市场虚拟机 (VM) 部署到一个订阅，现在我想将该订阅从一个 Azure 帐户迁移到另一个。当前支持此操作吗？</h5>
+                        <div>
+                            <p>我们当前不支持当订阅在 Azure 帐户间传输时将 Azure 市场虚拟机迁移到新帐户。如需将 Azure 市场虚拟机从一个 Azure 帐户迁移到另一个，则需将虚拟机重新部署到新 Azure 帐户下的新订阅（即不能部署到同一订阅）。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>我已将一个 Azure 市场虚拟机 (VM) 部署到一个订阅（我已在 azure.cn 上注册该订阅）。我现在想将该订阅迁移并关联到我的企业协议。当前支持此操作吗？</h5>
+                        <div>
+                            <p>可将 Azure 帐户与关联订阅关联到你的企业协议，但将继续按之前支付方式（例如信用卡）对 Azure 市场 VM 所产生的 ISV 费用计费。如需按企业协议对 Azure 市场 VM 所产生的 ISV 费用计费，需将 Azure 市场 VM 重新部署到通过企业门户创建的新订阅下。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>如果企业协议 (EA) 间接客户对于在 Azure 市场上销售的产品/服务的定价有问题，那么他们该与谁联系？</h5>
+                        <div>
+                            <p>对于所有 Azure 市场定价问题，EA 间接客户必须与其许可解决方案服务商 (LSP) 联系。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>谁能购买通过 Azure 市场销售/配置的应用程序和服务？</h5>
+                        <div>
+                            <p>Azure 市场可供中国大陆地区的 Azure 客户使用。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="a7" class="doc-pane">
+                <!--Azure相关-->
+                
+                <ul class="doc-group">
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>1元账号过期后里面的资源能否复制到其它账号？</h5>
+                        <div>
+                            <p>1元账号过期后里面的资源无法复制到其它账号，但可以申请付费升级为标准账号。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>1元账号是否需要付费升级？</h5>
+                        <div>
+                            <p>1元账号在使用的额度和时间上有一些限制。如果1元账号余额不足，则需要续费才能完成发布，如果没有余额或账号到期，则账号可能被删除。所以建议对1元账号进行升级，以保证镜像更新和测试需求。<a href="https://www.azure.cn/offers/ms-mc-azr-44p/">1元试用账号订阅详情</a>。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>A系列虚拟机和D系列有什么区别呢？</h5>
+                        <div>
+                            <p>具体区别请参见：<a href="https://www.azure.cn/pricing/details/virtual-machines/">虚拟机价格详情</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>你知道有哪些资源可以回答他们的一些虚拟机相关的问题吗？</h5>
+                        <div>
+                            <p>Azure 相关的配置和开发问题，请咨询 <a href="https://www.azure.cn/support/contact/">世纪互联 Azure 支持客服</a>。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>在虚拟机上ping外网不通，虚拟机能连接外网吗？</h5>
+                        <div>
+                            <p>可以连接外网。请参考相关技术文档，<a href="https://blogs.msdn.microsoft.com/mast/2014/06/22/use-port-pings-instead-of-icmp-to-test-azure-vm-connectivity/">Use port pings instead of ICMP to test Azure VM connectivity</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="doc-ask"><span class="plus"></span>忘记了 Azure 账号密码，如何找回？</h5>
+                        <div>
+                            <p>请按照登录页面上的密码找回步骤操作，如果您不是超级账号，可以找到超级账号管理员重置您的密码，或咨询世纪互联客服。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>

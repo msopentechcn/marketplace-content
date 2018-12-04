@@ -631,6 +631,12 @@
                 "parameters": {
                     "moodleCommon": {
                         "value": "[variables('moodleCommon')]"
+                    },
+                    "lbPubIp": {
+                        "value": "[reference('networkTemplate').outputs.lbPubIp.value]"
+                    },
+                    "ctlrPubIp": {
+                        "value": "[reference('networkTemplate').outputs.ctlrPubIp.value]"
                     }
                 },
                 "templateLink": {
