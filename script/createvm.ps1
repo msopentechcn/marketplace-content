@@ -19,7 +19,7 @@ $userName = "imtestuser"
 $passWord = "a@968^!Xm"
 $vmLocation = "China North"
 $endpoint ="core.chinacloudapi.cn"	
-$vhdName = $vhduri.Split("/")[-1]
+$vhdName = $vhduri.Split("?")[0].Split("/")[-1]
 
 
 $helpDocument = "
