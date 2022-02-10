@@ -1,6 +1,7 @@
-﻿Param(
+Param(
     [string]$resourcegroup,  #resource group of deployment
     [string]$vhduri,         #sas url of vhd file
+    [string]$datavhduri,         #sas url of vhd file
     [string]$size,           #default: "Standard_D1_v2"
     [string]$osLinuxOrWindows,    #default: linux
     [string[]]$ports,       #default: linux:22,443,80, windows:3389,443,80
@@ -19,7 +20,13 @@ $userName = "imtestuser"
 $passWord = "a@968^!Xm"
 $vmLocation = "China North"
 $endpoint ="core.chinacloudapi.cn"	
+$isexistdataVhduri = $false
 $vhdName = $vhduri.Split("?")[0].Split("/")[-1]
+if ($PSBoundParameters.ContainsKey("datavhduri")) {
+    $datavhdName = $datavhduri.Split("?")[0].Split("/")[-1]
+    $isexistdataVhduri = $true
+}
+
 
 
 $helpDocument = "
@@ -169,7 +176,7 @@ function CreateNSGGroupRule($resourceGroupName, $vmLocation, $ports, $nsgName){
     $nsg = New-AzNetworkSecurityGroup -ResourceGroupName $resourceGroupName -Location $vmLocation -Name $nsgName -SecurityRules $ruleArr -Force  -WarningAction Ignore
     return $nsg
 }
-function CreateVM($resourceGroupName, $vmLocation, $vmSize, $osType, $vmPorts, $vmUser, $vmPwd, $osDiskUrl, $vhdName, $vmName, $subnetName, $vnetName, $pubIpName, $nicName, $osDiskName)
+function CreateVM($resourceGroupName, $vmLocation, $vmSize, $osType, $vmPorts, $vmUser, $vmPwd, $osDiskUrl, $vhdName, $datavhdName, $vmName, $subnetName, $vnetName, $pubIpName, $nicName, $osDiskName, $dataosDiskName)
 {
     $subnetConfig = New-AzVirtualNetworkSubnetConfig -Name $subnetName -AddressPrefix 192.168.1.0/24
 
@@ -190,9 +197,11 @@ function CreateVM($resourceGroupName, $vmLocation, $vmSize, $osType, $vmPorts, $
 
     #Setting OS disk and Login Account
     $vmOsDisk = "{0}{1}.vhd" -f $osDiskUrl,$osDiskName
+    $datavmOsDisk = "{0}{1}.vhd" -f $osDiskUrl,$dataosDiskName
     $securePassword = ConvertTo-SecureString $vmPwd -AsPlainText -Force
     $cred = New-Object System.Management.Automation.PSCredential ($vmUser, $securePassword)
     $osSourceImageUri = $osDiskUrl + $vhdName 
+    $dataosSourceImageUri = $osDiskUrl + $datavhdName 
    
     $vmconfig = New-AzVMConfig -VMName $vmName -VMSize $vmSize 
 
@@ -208,10 +217,14 @@ function CreateVM($resourceGroupName, $vmLocation, $vmSize, $osType, $vmPorts, $
         throw "Cannot create the VM due to Wrong OS Value"
     }
 
+    #Add data Disk
+    if ($isexistdataVhduri){
+    $vmconfig =Add-AzVMDataDisk -VM $vmconfig -Name $dataosDiskName -VhdUri $datavmOsDisk -SourceImageUri $dataosSourceImageUri  -CreateOption FromImage -Lun 0
+    }
     $vmconfig = Add-AzVMNetworkInterface -VM $vmconfig  -Id $nic.Id #-Primary
 
     #create VM
-    New-AzVM -ResourceGroupName $resourceGroupName -Location $vmLocation -VM $vmconfig -Verbose -ErrorAction Stop
+    New-AzVM -ResourceGroupName $resourceGroupName -Location $vmLocation -VM $vmconfig -Verbose -ErrorAction Stop -Confirm 
     $vmList = Get-AzVM -ResourceGroupName $resourceGroupName
     Write-Host ("Deploy VM {0} Succeed." -f $vmList.Name)
     return $vmList.Name
@@ -277,12 +290,12 @@ function main(){
     login
 	
     $vmSizes | ForEach-Object{  
-
         Write-Host("`r`nBegin to create resources ... To study parameter, please execute: .\createvm.ps1 -help")
         $randSuffix = getRandom
         $destStorageAccount = ("storage{0}" -f $resourcegroup)
         $destContainerName = "container"
 		$destFileAbsoluteUri = "https://" + $destStorageAccount + ".blob." + $endpoint + "/" + $destContainerName + "/" + $vhdName
+        $datadestFileAbsoluteUri = "https://" + $destStorageAccount + ".blob." + $endpoint + "/" + $destContainerName + "/" + $datavhdName
         $osDiskUrl = "https://"+$destStorageAccount+".blob."+$endpoint+"/"+$destContainerName+"/"
   
         Write-Host("`r`n1. Creating resource group:{0}" -f $resourcegroup)
@@ -300,7 +313,9 @@ function main(){
 
         Write-Host("`r`n5. Copying source VHD file to destination file:{0}. Note that the Storage Account of VHD file must be the same as the VM which is deployed" -f $destFileAbsoluteUri)
         CopyVHD $vhdName $destContext $destContainerName $vhduri
-
+        if ($isexistdataVhduri){
+        CopyVHD $datavhdName $destContext $destContainerName $datavhduri
+        }
         Write-Host("`r`n6. Creating VM:")
         $vmName = "vmname{0}" -f $randSuffix 
         $subnetName = "subnet{0}" -f $randSuffix
@@ -308,7 +323,8 @@ function main(){
         $pubIpName = "pubip{0}" -f $randSuffix
         $nicName = "networkinterface{0}" -f $randSuffix
         $osDiskName = "osdisk{0}" -f $randSuffix
-        $realVmName = CreateVM $resourcegroup $vmLocation $_ $osType $vmPorts $userName $passWord $osDiskUrl $vhdName $vmName $subnetName $vnetName $pubIpName $nicName $osDiskName
+        $dataosDiskName = "dataosdisk{0}" -f $randSuffix
+        $realVmName = CreateVM $resourcegroup $vmLocation $_ $osType $vmPorts $userName $passWord $osDiskUrl $vhdName $datavhdName $vmName $subnetName $vnetName $pubIpName $nicName $osDiskName $dataosDiskName
 		if($realVmName)
         {
             $ip = (Get-AzPublicIpAddress -Name $pubIpName -ResourceGroupName $resourcegroup).IpAddress
